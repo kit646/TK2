@@ -20,10 +20,7 @@ let state = {
   filter: 'all',
   search: '',
   currentExam: null,
-  timerInterval: null,
-  remainingSeconds: 2400,
-  elapsedSeconds: 0,
-  timerPaused: false,
+  examStartedAt: 0,
   activePart1Select: null,
   lastReport: null
 };
@@ -75,13 +72,6 @@ function applyExamTheme(theme) {
   setMetaThemeColor(theme.primary);
 }
 
-function stopTimer() {
-  if (state.timerInterval) {
-    clearInterval(state.timerInterval);
-    state.timerInterval = null;
-  }
-}
-
 function navigate(path) {
   if (state.staticMode) {
     const targetHash = path === '/' ? '#/' : `#${path}`;
@@ -102,7 +92,6 @@ window.addEventListener('popstate', handleRoute);
 window.addEventListener('hashchange', handleRoute);
 
 async function handleRoute() {
-  stopTimer();
   const hashMatch = window.location.hash.match(/^#\/test\/(\d+)$/);
   if (hashMatch) {
     await loadAndRenderExam(Number(hashMatch[1]));
@@ -619,14 +608,11 @@ async function loadAndRenderExam(id) {
     }
     state.currentExam = exam;
     state.lastReport = null;
-    state.remainingSeconds = exam.duration_minutes * 60;
-    state.elapsedSeconds = 0;
-    state.timerPaused = false;
+    state.examStartedAt = Date.now();
     applyExamTheme(exam.theme);
     document.title = exam.title;
     renderExam(exam);
     restoreDraft(exam.id);
-    startTimer();
     window.scrollTo({ top: 0, behavior: 'auto' });
   } catch (err) {
     appEl.innerHTML = `<div class="loading-screen"><p>Lỗi tải đề thi: ${escapeHtml(err.message)}</p></div>`;
@@ -658,7 +644,7 @@ function renderExam(exam) {
 
   appEl.innerHTML = `
     <header class="exam-header">
-      <div class="header-badge">${escapeHtml(exam.badge)} · 50 QUESTIONS · ${exam.duration_minutes} MINUTES</div>
+      <div class="header-badge">${escapeHtml(exam.badge)} · 50 QUESTIONS</div>
       <h1>${escapeHtml(exam.title)}</h1>
       <p>${escapeHtml(exam.subtitle)}</p>
     </header>
@@ -671,18 +657,11 @@ function renderExam(exam) {
             <span class="topbar-topic">${escapeHtml(exam.topic)}</span>
           </div>
           <div class="topbar-controls">
-            <div class="timer-pill" id="timerPill">
-              <span>⏱ <span class="js-timer-text">${formatDuration(state.remainingSeconds)}</span></span>
-              <button type="button" class="mini-btn js-toggle-timer">Pause</button>
-            </div>
-            <button type="button" class="back-btn js-open-nav">Bảng câu (<span class="js-count-short">0/50</span>)</button>
+            <span class="progress-badge js-count-short">0/50</span>
+            <button type="button" class="back-btn topbar-nav-btn js-open-nav">Bảng câu</button>
           </div>
         </div>
         <div class="topbar-progress">
-          <div class="progress-top">
-            <span>Tiến độ làm bài</span>
-            <span class="js-count-full">0 / 50 answered</span>
-          </div>
           <div class="track"><div class="fill js-fill"></div></div>
         </div>
       </div>
@@ -855,14 +834,6 @@ function renderExam(exam) {
 
         <aside class="exam-sidebar" aria-label="Bảng điều hướng câu hỏi">
           <div class="sidebar-block">
-            <div class="sidebar-label">Thời gian còn lại</div>
-            <div class="timer-pill sidebar-timer" id="sidebarTimerPill">
-              <span>⏱ <span class="js-timer-text">${formatDuration(state.remainingSeconds)}</span></span>
-              <button type="button" class="mini-btn js-toggle-timer">Pause</button>
-            </div>
-          </div>
-
-          <div class="sidebar-block">
             <div class="progress-top">
               <span>Tiến độ</span>
               <span class="js-count-full">0 / 50 answered</span>
@@ -949,7 +920,11 @@ function bindExamEvents(exam) {
   state.activePart1Select = document.querySelector('.p1-select');
   syncActiveSelectHighlight();
 
-  document.getElementById('backToHub').addEventListener('click', () => navigate('/'));
+  document.getElementById('backToHub').addEventListener('click', () => {
+    closeAllModals();
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  });
 
   document.querySelectorAll('.js-open-nav').forEach(btn => {
     btn.addEventListener('click', () => openModal('navModal'));
@@ -974,15 +949,6 @@ function bindExamEvents(exam) {
   if (scrollTopBtn) {
     scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
-
-  document.querySelectorAll('.js-toggle-timer').forEach(btn => {
-    btn.addEventListener('click', () => {
-      state.timerPaused = !state.timerPaused;
-      document.querySelectorAll('.js-toggle-timer').forEach(b => {
-        b.textContent = state.timerPaused ? 'Resume' : 'Pause';
-      });
-    });
-  });
 
   document.querySelectorAll('[data-jump-sec]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1181,26 +1147,6 @@ function updateProgress() {
   }
 }
 
-function startTimer() {
-  stopTimer();
-  state.timerInterval = setInterval(() => {
-    if (state.timerPaused) return;
-    state.elapsedSeconds += 1;
-    if (state.remainingSeconds > 0) {
-      state.remainingSeconds -= 1;
-    }
-    const formatted = formatDuration(state.remainingSeconds);
-    document.querySelectorAll('.js-timer-text').forEach(el => {
-      el.textContent = formatted;
-    });
-    const isWarn = state.remainingSeconds <= 300;
-    const timerPill = document.getElementById('timerPill');
-    const sidebarPill = document.getElementById('sidebarTimerPill');
-    if (timerPill) timerPill.classList.toggle('warning', isWarn);
-    if (sidebarPill) sidebarPill.classList.toggle('warning', isWarn);
-  }, 1000);
-}
-
 function saveDraft(testId) {
   try {
     const payload = {
@@ -1270,10 +1216,13 @@ async function submitExam(exam) {
   submitBtn.textContent = 'Grading...';
 
   try {
+    const elapsedSeconds = state.examStartedAt
+      ? Math.max(0, Math.round((Date.now() - state.examStartedAt) / 1000))
+      : 0;
     const payload = {
       student_name: document.getElementById('studentName').value.trim(),
       student_class: document.getElementById('studentClass').value.trim(),
-      elapsed_seconds: state.elapsedSeconds,
+      elapsed_seconds: elapsedSeconds,
       answers
     };
 
@@ -1293,10 +1242,6 @@ async function submitExam(exam) {
       report = await res.json();
     }
     state.lastReport = report;
-    state.timerPaused = true;
-    document.querySelectorAll('.js-toggle-timer').forEach(b => {
-      b.textContent = 'Paused';
-    });
 
     applyGradingHighlights(report);
     renderScoreReport(exam, report);
@@ -1435,9 +1380,7 @@ function resetExam(exam) {
     localStorage.removeItem(`a2_draft_test_${exam.id}`);
   } catch (_) {}
   state.lastReport = null;
-  state.remainingSeconds = exam.duration_minutes * 60;
-  state.elapsedSeconds = 0;
-  state.timerPaused = false;
+  state.examStartedAt = Date.now();
 
   document.querySelectorAll('select[data-q]').forEach(s => {
     s.selectedIndex = 0;
@@ -1459,17 +1402,6 @@ function resetExam(exam) {
     resultBox.style.display = 'none';
     resultBox.innerHTML = '';
   }
-  const formatted = formatDuration(state.remainingSeconds);
-  document.querySelectorAll('.js-timer-text').forEach(el => {
-    el.textContent = formatted;
-  });
-  const timerPill = document.getElementById('timerPill');
-  const sidebarPill = document.getElementById('sidebarTimerPill');
-  if (timerPill) timerPill.classList.remove('warning');
-  if (sidebarPill) sidebarPill.classList.remove('warning');
-  document.querySelectorAll('.js-toggle-timer').forEach(b => {
-    b.textContent = 'Pause';
-  });
 
   state.activePart1Select = document.querySelector('.p1-select');
   syncActiveSelectHighlight();

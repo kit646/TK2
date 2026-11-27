@@ -529,9 +529,10 @@ button,
   font-weight: 700;
   font-size: 13px;
   padding: 7px 12px;
-  min-height: 38px;
+  min-height: 40px;
   border-radius: 10px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .topbar-controls {
@@ -541,36 +542,19 @@ button,
   flex-shrink: 0;
 }
 
-.timer-pill {
+.progress-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 10px;
-  min-height: 38px;
-  border-radius: 10px;
-  background: var(--pale);
-  border: 1.5px solid var(--line);
-  font-weight: 800;
+  padding: 6px 12px;
+  min-height: 36px;
+  border-radius: 999px;
+  background: var(--soft);
   color: var(--dark);
-  font-size: 13.5px;
-  font-variant-numeric: tabular-nums;
-}
-
-.timer-pill.warning {
-  background: #fff1f2;
-  border-color: #fda4af;
-  color: #be123c;
-}
-
-.mini-btn {
   border: 1px solid var(--line);
-  background: #ffffff;
-  color: var(--dark);
-  border-radius: 7px;
-  padding: 3px 8px;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 .topbar-progress {
@@ -654,13 +638,6 @@ button,
   letter-spacing: 0.6px;
   color: var(--primary);
   margin-bottom: 8px;
-}
-
-.sidebar-timer {
-  width: 100%;
-  justify-content: space-between;
-  padding: 8px 12px;
-  font-size: 16px;
 }
 
 .jump-chips {
@@ -1636,7 +1613,8 @@ footer {
   .student-field.class-field {
     flex-basis: 100%;
   }
-  .topbar-topic {
+  .topbar-topic,
+  .topbar-nav-btn {
     display: none;
   }
   .score-highlight {

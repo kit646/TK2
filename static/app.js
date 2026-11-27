@@ -975,17 +975,17 @@ function bindExamEvents(exam) {
   });
 
   const handleBankChipSelect = chip => {
-    if (!chip) return;
+    if (!chip || chip.classList.contains('used')) return;
     const word = chip.dataset.word;
     const selects = Array.from(document.querySelectorAll('.p1-select'));
     const target = (state.activePart1Select && !state.activePart1Select.value)
       ? state.activePart1Select
-      : selects.find(s => !s.value) || state.activePart1Select;
+      : selects.find(s => !s.value);
 
     if (target) {
       target.value = word;
       const nextEmpty = selects.find(s => !s.value);
-      state.activePart1Select = nextEmpty || target;
+      state.activePart1Select = nextEmpty || null;
       syncActiveSelectHighlight();
       syncWordBank();
       updateProgress();
@@ -1093,11 +1093,21 @@ function placeWordBlock(poolBlock) {
 
 function syncWordBank() {
   const used = new Set();
-  document.querySelectorAll('.p1-select').forEach(s => {
+  const selects = document.querySelectorAll('.p1-select');
+  selects.forEach(s => {
     if (s.value) used.add(s.value);
   });
   document.querySelectorAll('.bank-chip').forEach(chip => {
-    chip.classList.toggle('used', used.has(chip.dataset.word));
+    const isUsed = used.has(chip.dataset.word);
+    chip.classList.toggle('used', isUsed);
+    chip.setAttribute('aria-disabled', isUsed ? 'true' : 'false');
+    chip.setAttribute('tabindex', isUsed ? '-1' : '0');
+  });
+  selects.forEach(s => {
+    Array.from(s.options).forEach(opt => {
+      if (!opt.value) return;
+      opt.disabled = used.has(opt.value) && s.value !== opt.value;
+    });
   });
 }
 

@@ -44,6 +44,11 @@ function formatDuration(seconds) {
   return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
 }
 
+function setMetaThemeColor(color) {
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta && color) meta.setAttribute('content', color);
+}
+
 function resetThemeToDefault() {
   const root = document.documentElement.style;
   root.setProperty('--dark', '#1e293b');
@@ -54,6 +59,7 @@ function resetThemeToDefault() {
   root.setProperty('--pale', '#f8fafc');
   root.setProperty('--line', '#cbd5e1');
   root.setProperty('--ink', '#0f172a');
+  setMetaThemeColor('#1e3a8a');
 }
 
 function applyExamTheme(theme) {
@@ -66,6 +72,7 @@ function applyExamTheme(theme) {
   root.setProperty('--pale', theme.pale);
   root.setProperty('--line', theme.line);
   root.setProperty('--ink', theme.ink);
+  setMetaThemeColor(theme.primary);
 }
 
 function stopTimer() {
@@ -401,11 +408,15 @@ function renderHub() {
     );
   });
 
+  const modeLabel = state.staticMode
+    ? 'GitHub Pages · Chế độ độc lập trên trình duyệt'
+    : 'Rust + Axum Server · Lưu lịch sử tự động';
+
   appEl.innerHTML = `
     <header class="hub-header">
-      <span class="eyebrow">CEFR A2.1 · Progress Test 2 · Rust + Axum</span>
       <h1>Hệ Thống Luyện Thi A2.1 – Progress Test 2 (13 Đề)</h1>
-      <p>Bao gồm <b>3 đề gốc</b> tham chiếu từ Google Sites và <b>10 đề phát triển mới</b> (500 câu mới, tổng 650 câu) chuẩn cấu trúc 50 câu / 40 phút với chấm điểm tự động phía server.</p>
+      <p>Bao gồm <b>3 đề gốc</b> tham chiếu và <b>10 đề phát triển mới</b> (650 câu hỏi chuẩn cấu trúc 50 câu / 40 phút) với giao diện tối ưu cho cả điện thoại và máy tính.</p>
+      <div class="hub-mode-pill">${escapeHtml(modeLabel)}</div>
     </header>
 
     <main class="hub-main">
@@ -524,6 +535,7 @@ function renderHistoryTable(history) {
   if (!history.length) {
     return '<p style="margin:0;color:#64748b;font-size:14px">Chưa có lượt nộp bài nào. Hãy chọn một đề thi ở trên để bắt đầu!</p>';
   }
+  const items = history.slice(0, 25);
   return `
     <div class="table-wrap">
       <table class="history-table">
@@ -539,7 +551,7 @@ function renderHistoryTable(history) {
           </tr>
         </thead>
         <tbody>
-          ${history.slice(0, 25).map(h => `
+          ${items.map(h => `
             <tr>
               <td><a href="/test/${h.test_id}" class="hist-link" data-id="${h.test_id}" style="font-weight:700;color:#1d4ed8;text-decoration:none">${escapeHtml(h.test_title)}</a></td>
               <td>${escapeHtml(h.student_name)}</td>
@@ -552,6 +564,22 @@ function renderHistoryTable(history) {
           `).join('')}
         </tbody>
       </table>
+    </div>
+    <div class="history-mobile-list">
+      ${items.map(h => `
+        <div class="history-mobile-item">
+          <div class="history-mobile-top">
+            <a href="/test/${h.test_id}" class="hist-link" data-id="${h.test_id}" style="font-weight:700;color:#1d4ed8;text-decoration:none;font-size:14px;line-height:1.35">${escapeHtml(h.test_title)}</a>
+            <span class="history-mobile-score">${h.ten_scale.toFixed(1)} / 10</span>
+          </div>
+          <div class="history-mobile-meta">
+            <span>👤 ${escapeHtml(h.student_name)}${h.student_class && h.student_class !== '—' ? ` (${escapeHtml(h.student_class)})` : ''}</span>
+            <span>✓ ${h.total_correct}/${h.total_questions} (${h.accuracy_percent}%)</span>
+            <span>⏱ ${formatDuration(h.elapsed_seconds)}</span>
+            <span>🕒 ${escapeHtml(h.submitted_at)}</span>
+          </div>
+        </div>
+      `).join('')}
     </div>
   `;
 }
@@ -616,6 +644,18 @@ function renderExam(exam) {
     return `<button type="button" class="nav-dot" data-nav-q="${q}">${q}</button>`;
   }).join('');
 
+  const jumpChipsHtml = `
+    <div class="jump-chips">
+      <button type="button" class="jump-chip" data-jump-sec="sec-a1">A·P1</button>
+      <button type="button" class="jump-chip" data-jump-sec="sec-a2">A·P2</button>
+      <button type="button" class="jump-chip" data-jump-sec="sec-a3">A·P3</button>
+      <button type="button" class="jump-chip" data-jump-sec="sec-a4">A·P4</button>
+      <button type="button" class="jump-chip" data-jump-sec="sec-b1">B·P1</button>
+      <button type="button" class="jump-chip" data-jump-sec="sec-b2">B·P2</button>
+      <button type="button" class="jump-chip" data-jump-sec="sec-b3">B·P3</button>
+    </div>
+  `;
+
   appEl.innerHTML = `
     <header class="exam-header">
       <div class="header-badge">${escapeHtml(exam.badge)} · 50 QUESTIONS · ${exam.duration_minutes} MINUTES</div>
@@ -623,212 +663,338 @@ function renderExam(exam) {
       <p>${escapeHtml(exam.subtitle)}</p>
     </header>
 
-    <main class="exam-main">
-      <div class="exam-topbar">
+    <div class="exam-topbar">
+      <div class="exam-topbar-inner">
         <div class="topbar-row">
           <div class="topbar-left">
             <button type="button" class="back-btn" id="backToHub">← Danh sách đề</button>
-            <strong style="color:var(--dark);font-size:14.5px">${escapeHtml(exam.topic)}</strong>
+            <span class="topbar-topic">${escapeHtml(exam.topic)}</span>
           </div>
           <div class="topbar-controls">
             <div class="timer-pill" id="timerPill">
-              <span>⏱ <span id="timerText">${formatDuration(state.remainingSeconds)}</span></span>
-              <button type="button" class="mini-btn" id="toggleTimerBtn">Pause</button>
+              <span>⏱ <span class="js-timer-text">${formatDuration(state.remainingSeconds)}</span></span>
+              <button type="button" class="mini-btn js-toggle-timer">Pause</button>
             </div>
-            <button type="button" class="back-btn" id="toggleNavBtn">Bảng câu (1–50)</button>
+            <button type="button" class="back-btn js-open-nav">Bảng câu (<span class="js-count-short">0/50</span>)</button>
           </div>
         </div>
-        <div class="progress-row">
+        <div class="topbar-progress">
           <div class="progress-top">
-            <span>Progress</span>
-            <span id="count">0 / 50 answered</span>
+            <span>Tiến độ làm bài</span>
+            <span class="js-count-full">0 / 50 answered</span>
           </div>
-          <div class="track"><div class="fill" id="fill"></div></div>
-        </div>
-        <div class="nav-drawer" id="navDrawer">
-          <div class="nav-grid">${navDots}</div>
+          <div class="track"><div class="fill js-fill"></div></div>
         </div>
       </div>
+    </div>
 
-      <div class="student-card">
-        <div class="student-field">
-          <label for="studentName">Student Name</label>
-          <input type="text" id="studentName" placeholder="Enter your full name...">
-        </div>
-        <div class="student-field" style="max-width:260px">
-          <label for="studentClass">Class (Optional)</label>
-          <input type="text" id="studentClass" placeholder="e.g., A2.1 - Class 01">
-        </div>
-      </div>
-
-      <div class="sec-banner">Section A: Vocabulary <span>30 questions</span></div>
-
-      <section class="part-section">
-        <h2><span class="tag">PART 1</span>Complete the sentences with the words in the box.</h2>
-        <p class="small">There are TWO extra words. Click a word chip to fill the active/next empty gap, or choose from each dropdown. (Questions 1–10)</p>
-        <div class="word-bank" id="wordBank">
-          ${exam.word_bank.map(w => `<span class="bank-chip" data-word="${escapeHtml(w)}">${escapeHtml(w)}</span>`).join('')}
-        </div>
-        <div id="secA_part1">
-          ${exam.sec_a_part1.map(item => `
-            <div class="q-row" id="q-wrap-${item.num}" data-q="${item.num}">
-              <b>${item.num}.</b> ${escapeHtml(item.pre)}
-              <select class="inline-select p1-select" data-q="${item.num}" aria-label="Question ${item.num}">${p1Opts}</select>
-              ${escapeHtml(item.post)}
-              <span class="ans-slot"></span>
+    <main class="exam-main">
+      <div class="exam-layout">
+        <div class="exam-questions-col">
+          <div class="student-card">
+            <div class="student-field">
+              <label for="studentName">Student Name</label>
+              <input type="text" id="studentName" autocomplete="name" placeholder="Enter your full name...">
             </div>
-          `).join('')}
-        </div>
-      </section>
-
-      <section class="part-section">
-        <h2><span class="tag">PART 2</span>Read the passage. Are the sentences True or False?</h2>
-        <p class="small">Read the text on the left and choose True or False on the right. (Questions 11–18)</p>
-        <div class="split-wrap">
-          <div class="passage-sticky">
-            <h3>${escapeHtml(exam.passage.title)}</h3>
-            <div class="sub">${escapeHtml(exam.passage.subtitle)}</div>
-            ${exam.passage.paragraphs.map(p => `<p>${escapeHtml(p)}</p>`).join('')}
+            <div class="student-field class-field">
+              <label for="studentClass">Class (Optional)</label>
+              <input type="text" id="studentClass" placeholder="e.g., A2.1 - Class 01">
+            </div>
           </div>
-          <div class="tf-list" id="secA_part2">
-            ${exam.sec_a_part2.map(item => `
-              <div class="tf-item" id="q-wrap-${item.num}" data-q="${item.num}">
-                <div><b>${item.num}.</b> ${escapeHtml(item.statement)} <span class="ans-slot"></span></div>
-                <div class="tf-opts">
-                  <label class="pill-radio"><input type="radio" name="q${item.num}" value="True"> True</label>
-                  <label class="pill-radio"><input type="radio" name="q${item.num}" value="False"> False</label>
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      </section>
 
-      <section class="part-section">
-        <h2><span class="tag">PART 3</span>Match the questions 19–24 with responses a–f.</h2>
-        <p class="small">Select the matching response letter (a–f) for each question. (Questions 19–24)</p>
-        <div class="match-grid">
-          <div id="secA_part3">
-            ${exam.sec_a_part3.map(item => `
-              <div class="q-row match-row" id="q-wrap-${item.num}" data-q="${item.num}">
-                <span><b>${item.num}.</b> ${escapeHtml(item.question)}</span>
-                <div>
-                  <select class="inline-select" style="min-width:74px" data-q="${item.num}" aria-label="Question ${item.num}">${matchOpts}</select>
+          <div class="sec-banner">Section A: Vocabulary <span>30 questions</span></div>
+
+          <section class="part-section" id="sec-a1">
+            <h2><span class="tag">PART 1</span>Complete the sentences with the words in the box.</h2>
+            <p class="small">There are TWO extra words. Click or tap a word chip to fill the active/next empty gap, or choose from each dropdown. (Questions 1–10)</p>
+            <div class="word-bank" id="wordBank">
+              ${exam.word_bank.map(w => `<span class="bank-chip" role="button" tabindex="0" data-word="${escapeHtml(w)}">${escapeHtml(w)}</span>`).join('')}
+            </div>
+            <div id="secA_part1">
+              ${exam.sec_a_part1.map(item => `
+                <div class="q-row" id="q-wrap-${item.num}" data-q="${item.num}">
+                  <b>${item.num}.</b> ${escapeHtml(item.pre)}
+                  <select class="inline-select p1-select" data-q="${item.num}" aria-label="Question ${item.num}">${p1Opts}</select>
+                  ${escapeHtml(item.post)}
                   <span class="ans-slot"></span>
                 </div>
-              </div>
-            `).join('')}
-          </div>
-          <div class="resp-box">
-            <h4>Responses (a–f)</h4>
-            ${exam.sec_a_part3_responses.map(r => `
-              <div class="resp-line"><b>${escapeHtml(r.letter)}.</b> ${escapeHtml(r.text)}</div>
-            `).join('')}
-          </div>
-        </div>
-      </section>
-
-      <section class="part-section">
-        <h2><span class="tag">PART 4</span>Each sentence contains one spelling mistake. Write the correct word.</h2>
-        <p class="small">Look at the bold misspelled word and type the correct spelling in the box next to each sentence. (Questions 25–30)</p>
-        <div id="secA_part4">
-          ${exam.sec_a_part4.map(item => `
-            <div class="q-row" id="q-wrap-${item.num}" data-q="${item.num}">
-              <div class="spell-row">
-                <div class="spell-sent"><b>${item.num}.</b> ${escapeHtml(item.pre)}<b class="wrong-word">${escapeHtml(item.wrong_word)}</b>${escapeHtml(item.post)}</div>
-                <div class="spell-ctrl">
-                  <input type="text" class="inline-input spell-input" data-q="${item.num}" placeholder="Correct word..." aria-label="Question ${item.num}">
-                  <span class="ans-slot"></span>
-                </div>
-              </div>
+              `).join('')}
             </div>
-          `).join('')}
-        </div>
-      </section>
+          </section>
 
-      <div class="sec-banner">Section B: Grammar <span>20 questions</span></div>
-
-      <section class="part-section">
-        <h2><span class="tag">PART 1</span>Choose the correct answer for each question.</h2>
-        <p class="small">Click the correct word or phrase to complete each sentence. (Questions 31–40)</p>
-        <div id="secB_part1">
-          ${exam.sec_b_part1.map(item => `
-            <div class="q-row" id="q-wrap-${item.num}" data-q="${item.num}">
-              <div><b>${item.num}.</b> ${escapeHtml(item.sentence)} <span class="ans-slot"></span></div>
-              <div class="gram-opts">
-                ${item.options.map(opt => `
-                  <label class="pill-radio"><input type="radio" name="q${item.num}" value="${escapeHtml(opt)}"> ${escapeHtml(opt)}</label>
+          <section class="part-section" id="sec-a2">
+            <h2><span class="tag">PART 2</span>Read the passage. Are the sentences True or False?</h2>
+            <p class="small">Read the text and choose True or False for each statement. (Questions 11–18)</p>
+            <div class="mobile-passage-bar">
+              <button type="button" class="passage-peek-btn" id="openPassageModalBtn">📖 Xem nhanh bài đọc (${escapeHtml(exam.passage.title)})</button>
+            </div>
+            <div class="split-wrap">
+              <div class="passage-sticky">
+                <h3>${escapeHtml(exam.passage.title)}</h3>
+                <div class="sub">${escapeHtml(exam.passage.subtitle)}</div>
+                ${exam.passage.paragraphs.map(p => `<p>${escapeHtml(p)}</p>`).join('')}
+              </div>
+              <div class="tf-list" id="secA_part2">
+                ${exam.sec_a_part2.map(item => `
+                  <div class="tf-item" id="q-wrap-${item.num}" data-q="${item.num}">
+                    <div><b>${item.num}.</b> ${escapeHtml(item.statement)} <span class="ans-slot"></span></div>
+                    <div class="tf-opts">
+                      <label class="pill-radio"><input type="radio" name="q${item.num}" value="True"> True</label>
+                      <label class="pill-radio"><input type="radio" name="q${item.num}" value="False"> False</label>
+                    </div>
+                  </div>
                 `).join('')}
               </div>
             </div>
-          `).join('')}
-        </div>
-      </section>
+          </section>
 
-      <section class="part-section">
-        <h2><span class="tag">PART 2</span>Put the words in the correct order.</h2>
-        <p class="small">Click the word blocks below each box to build the sentence. Click a placed block to return it. (Questions 41–45)</p>
-        <div id="secB_part2">
-          ${exam.sec_b_part2.map(item => `
-            <div class="order-card" id="q-wrap-${item.num}" data-q="${item.num}">
-              <div class="order-head">
-                <div><b>${item.num}.</b> <span class="ans-slot"></span></div>
-                <button type="button" class="clear-blocks-btn" data-clear="${item.num}">Clear</button>
+          <section class="part-section" id="sec-a3">
+            <h2><span class="tag">PART 3</span>Match the questions 19–24 with responses a–f.</h2>
+            <p class="small">Select the matching response letter (a–f) for each question. (Questions 19–24)</p>
+            <div class="match-grid">
+              <div id="secA_part3">
+                ${exam.sec_a_part3.map(item => `
+                  <div class="q-row match-row" id="q-wrap-${item.num}" data-q="${item.num}">
+                    <span><b>${item.num}.</b> ${escapeHtml(item.question)}</span>
+                    <div class="match-ctrl">
+                      <select class="inline-select" style="min-width:74px" data-q="${item.num}" aria-label="Question ${item.num}">${matchOpts}</select>
+                      <span class="ans-slot"></span>
+                    </div>
+                  </div>
+                `).join('')}
               </div>
-              <div class="answer-tray" data-tray="${item.num}"></div>
-              <div class="block-pool" data-pool="${item.num}">
-                ${item.blocks.map((blk, idx) => `<span class="word-block" data-q="${item.num}" data-idx="${idx}" data-text="${escapeHtml(blk)}">${escapeHtml(blk)}</span>`).join('')}
+              <div class="resp-box">
+                <h4>Responses (a–f)</h4>
+                ${exam.sec_a_part3_responses.map(r => `
+                  <div class="resp-line"><b>${escapeHtml(r.letter)}.</b> ${escapeHtml(r.text)}</div>
+                `).join('')}
               </div>
             </div>
-          `).join('')}
-        </div>
-      </section>
+          </section>
 
-      <section class="part-section">
-        <h2><span class="tag">PART 3</span>Write the correct form of the words in brackets.</h2>
-        <p class="small">Type the correct grammatical form in each gap. (Questions 46–50)</p>
-        <div id="secB_part3">
-          ${exam.sec_b_part3.map(item => `
-            <div class="q-row" id="q-wrap-${item.num}" data-q="${item.num}">
-              <b>${item.num}.</b> ${escapeHtml(item.pre)}
-              <input type="text" class="inline-input form-input" data-q="${item.num}" placeholder="Write form..." aria-label="Question ${item.num}">
-              ${escapeHtml(item.post)}
-              <span class="ans-slot"></span>
+          <section class="part-section" id="sec-a4">
+            <h2><span class="tag">PART 4</span>Each sentence contains one spelling mistake. Write the correct word.</h2>
+            <p class="small">Look at the bold misspelled word and type the correct spelling in the box next to each sentence. (Questions 25–30)</p>
+            <div id="secA_part4">
+              ${exam.sec_a_part4.map(item => `
+                <div class="q-row" id="q-wrap-${item.num}" data-q="${item.num}">
+                  <div class="spell-row">
+                    <div class="spell-sent"><b>${item.num}.</b> ${escapeHtml(item.pre)}<b class="wrong-word">${escapeHtml(item.wrong_word)}</b>${escapeHtml(item.post)}</div>
+                    <div class="spell-ctrl">
+                      <input type="text" class="inline-input spell-input" autocapitalize="none" autocorrect="off" spellcheck="false" data-q="${item.num}" placeholder="Correct word..." aria-label="Question ${item.num}">
+                      <span class="ans-slot"></span>
+                    </div>
+                  </div>
+                </div>
+              `).join('')}
             </div>
-          `).join('')}
-        </div>
-      </section>
+          </section>
 
-      <div class="actions">
-        <button type="button" class="main-btn" id="submitBtn">Submit Answers</button>
-        <button type="button" class="main-btn secondary" id="resetBtn">Reset Test</button>
+          <div class="sec-banner">Section B: Grammar <span>20 questions</span></div>
+
+          <section class="part-section" id="sec-b1">
+            <h2><span class="tag">PART 1</span>Choose the correct answer for each question.</h2>
+            <p class="small">Click or tap the correct word or phrase to complete each sentence. (Questions 31–40)</p>
+            <div id="secB_part1">
+              ${exam.sec_b_part1.map(item => `
+                <div class="q-row" id="q-wrap-${item.num}" data-q="${item.num}">
+                  <div><b>${item.num}.</b> ${escapeHtml(item.sentence)} <span class="ans-slot"></span></div>
+                  <div class="gram-opts">
+                    ${item.options.map(opt => `
+                      <label class="pill-radio"><input type="radio" name="q${item.num}" value="${escapeHtml(opt)}"> ${escapeHtml(opt)}</label>
+                    `).join('')}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+
+          <section class="part-section" id="sec-b2">
+            <h2><span class="tag">PART 2</span>Put the words in the correct order.</h2>
+            <p class="small">Tap the word blocks below each box to build the sentence. Tap a placed block to return it. (Questions 41–45)</p>
+            <div id="secB_part2">
+              ${exam.sec_b_part2.map(item => `
+                <div class="order-card" id="q-wrap-${item.num}" data-q="${item.num}">
+                  <div class="order-head">
+                    <div><b>${item.num}.</b> <span class="ans-slot"></span></div>
+                    <button type="button" class="clear-blocks-btn" data-clear="${item.num}">Clear</button>
+                  </div>
+                  <div class="answer-tray" data-tray="${item.num}"></div>
+                  <div class="block-pool" data-pool="${item.num}">
+                    ${item.blocks.map((blk, idx) => `<span class="word-block" role="button" tabindex="0" data-q="${item.num}" data-idx="${idx}" data-text="${escapeHtml(blk)}">${escapeHtml(blk)}</span>`).join('')}
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+
+          <section class="part-section" id="sec-b3">
+            <h2><span class="tag">PART 3</span>Write the correct form of the words in brackets.</h2>
+            <p class="small">Type the correct grammatical form in each gap. (Questions 46–50)</p>
+            <div id="secB_part3">
+              ${exam.sec_b_part3.map(item => `
+                <div class="q-row" id="q-wrap-${item.num}" data-q="${item.num}">
+                  <b>${item.num}.</b> ${escapeHtml(item.pre)}
+                  <input type="text" class="inline-input form-input" autocapitalize="none" autocorrect="off" spellcheck="false" data-q="${item.num}" placeholder="Write form..." aria-label="Question ${item.num}">
+                  ${escapeHtml(item.post)}
+                  <span class="ans-slot"></span>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+
+          <div class="actions">
+            <button type="button" class="main-btn" id="submitBtn">Submit Answers</button>
+            <button type="button" class="main-btn secondary" id="resetBtn">Reset Test</button>
+          </div>
+
+          <div id="result"></div>
+
+          <footer>${escapeHtml(exam.title)} · 50 questions · ${exam.duration_minutes} minutes</footer>
+        </div>
+
+        <aside class="exam-sidebar" aria-label="Bảng điều hướng câu hỏi">
+          <div class="sidebar-block">
+            <div class="sidebar-label">Thời gian còn lại</div>
+            <div class="timer-pill sidebar-timer" id="sidebarTimerPill">
+              <span>⏱ <span class="js-timer-text">${formatDuration(state.remainingSeconds)}</span></span>
+              <button type="button" class="mini-btn js-toggle-timer">Pause</button>
+            </div>
+          </div>
+
+          <div class="sidebar-block">
+            <div class="progress-top">
+              <span>Tiến độ</span>
+              <span class="js-count-full">0 / 50 answered</span>
+            </div>
+            <div class="track"><div class="fill js-fill"></div></div>
+          </div>
+
+          <div class="sidebar-block">
+            <div class="sidebar-label">Chuyển nhanh theo phần</div>
+            ${jumpChipsHtml}
+          </div>
+
+          <div class="sidebar-block">
+            <div class="sidebar-label">Bảng câu hỏi (1–50)</div>
+            <div class="nav-grid">${navDots}</div>
+          </div>
+
+          <div class="sidebar-actions">
+            <button type="button" class="main-btn js-submit-trigger">Submit Answers</button>
+            <button type="button" class="main-btn secondary js-reset-trigger">Reset Test</button>
+          </div>
+        </aside>
       </div>
-
-      <div id="result"></div>
-
-      <footer>${escapeHtml(exam.title)} · 50 questions · ${exam.duration_minutes} minutes</footer>
     </main>
+
+    <div class="mobile-bottom-bar" aria-label="Thanh thao tác nhanh">
+      <button type="button" class="bottom-bar-btn js-open-nav">Bảng câu (<span class="js-count-short">0/50</span>)</button>
+      <button type="button" class="bottom-bar-btn" id="scrollTopBtn">Lên đầu</button>
+      <button type="button" class="bottom-bar-btn primary js-submit-trigger">Nộp bài</button>
+    </div>
+
+    <div class="modal-backdrop" id="navModal" role="dialog" aria-modal="true" aria-label="Bảng câu hỏi 1 đến 50">
+      <div class="modal-sheet">
+        <div class="modal-head">
+          <h3>Bảng câu hỏi (1–50)</h3>
+          <button type="button" class="modal-close-btn" data-close-modal="navModal">Đóng</button>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-label">Chuyển nhanh theo phần</div>
+          ${jumpChipsHtml}
+        </div>
+        <div class="nav-grid">${navDots}</div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="passageModal" role="dialog" aria-modal="true" aria-label="Bài đọc tham khảo">
+      <div class="modal-sheet">
+        <div class="modal-head">
+          <h3>${escapeHtml(exam.passage.title)}</h3>
+          <button type="button" class="modal-close-btn" data-close-modal="passageModal">Đóng</button>
+        </div>
+        <div class="modal-passage-body">
+          <div style="font-size:13px;font-weight:700;color:var(--primary);margin-bottom:10px">${escapeHtml(exam.passage.subtitle)}</div>
+          ${exam.passage.paragraphs.map(p => `<p>${escapeHtml(p)}</p>`).join('')}
+        </div>
+      </div>
+    </div>
   `;
 
   bindExamEvents(exam);
 }
 
+function closeAllModals() {
+  document.querySelectorAll('.modal-backdrop.open').forEach(m => m.classList.remove('open'));
+}
+
+function openModal(id) {
+  closeAllModals();
+  const modal = document.getElementById(id);
+  if (modal) modal.classList.add('open');
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeAllModals();
+});
+
+function syncActiveSelectHighlight() {
+  document.querySelectorAll('.p1-select').forEach(sel => {
+    sel.classList.toggle('is-active', sel === state.activePart1Select);
+  });
+}
+
 function bindExamEvents(exam) {
   state.activePart1Select = document.querySelector('.p1-select');
+  syncActiveSelectHighlight();
 
   document.getElementById('backToHub').addEventListener('click', () => navigate('/'));
 
-  document.getElementById('toggleNavBtn').addEventListener('click', () => {
-    document.getElementById('navDrawer').classList.toggle('open');
+  document.querySelectorAll('.js-open-nav').forEach(btn => {
+    btn.addEventListener('click', () => openModal('navModal'));
   });
 
-  document.getElementById('toggleTimerBtn').addEventListener('click', () => {
-    state.timerPaused = !state.timerPaused;
-    document.getElementById('toggleTimerBtn').textContent = state.timerPaused ? 'Resume' : 'Pause';
+  const openPassageBtn = document.getElementById('openPassageModalBtn');
+  if (openPassageBtn) {
+    openPassageBtn.addEventListener('click', () => openModal('passageModal'));
+  }
+
+  document.querySelectorAll('[data-close-modal]').forEach(btn => {
+    btn.addEventListener('click', closeAllModals);
+  });
+
+  document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+    backdrop.addEventListener('click', e => {
+      if (e.target === backdrop) closeAllModals();
+    });
+  });
+
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+  document.querySelectorAll('.js-toggle-timer').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.timerPaused = !state.timerPaused;
+      document.querySelectorAll('.js-toggle-timer').forEach(b => {
+        b.textContent = state.timerPaused ? 'Resume' : 'Pause';
+      });
+    });
+  });
+
+  document.querySelectorAll('[data-jump-sec]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      closeAllModals();
+      const target = document.getElementById(btn.dataset.jumpSec);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   });
 
   document.querySelectorAll('.nav-dot').forEach(dot => {
     dot.addEventListener('click', () => {
+      closeAllModals();
       const target = document.getElementById(`q-wrap-${dot.dataset.navQ}`);
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
@@ -836,11 +1002,13 @@ function bindExamEvents(exam) {
 
   document.getElementById('secA_part1').addEventListener('focusin', e => {
     const sel = e.target.closest('.p1-select');
-    if (sel) state.activePart1Select = sel;
+    if (sel) {
+      state.activePart1Select = sel;
+      syncActiveSelectHighlight();
+    }
   });
 
-  document.getElementById('wordBank').addEventListener('click', e => {
-    const chip = e.target.closest('.bank-chip');
+  const handleBankChipSelect = chip => {
     if (!chip) return;
     const word = chip.dataset.word;
     const selects = Array.from(document.querySelectorAll('.p1-select'));
@@ -851,14 +1019,28 @@ function bindExamEvents(exam) {
     if (target) {
       target.value = word;
       const nextEmpty = selects.find(s => !s.value);
-      if (nextEmpty) state.activePart1Select = nextEmpty;
+      state.activePart1Select = nextEmpty || target;
+      syncActiveSelectHighlight();
       syncWordBank();
       updateProgress();
       saveDraft(exam.id);
     }
+  };
+
+  document.getElementById('wordBank').addEventListener('click', e => {
+    handleBankChipSelect(e.target.closest('.bank-chip'));
+  });
+  document.getElementById('wordBank').addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const chip = e.target.closest('.bank-chip');
+      if (chip) {
+        e.preventDefault();
+        handleBankChipSelect(chip);
+      }
+    }
   });
 
-  document.getElementById('secB_part2').addEventListener('click', e => {
+  const handleBlockInteraction = e => {
     const poolBlock = e.target.closest('.block-pool .word-block');
     if (poolBlock) {
       placeWordBlock(poolBlock);
@@ -887,6 +1069,17 @@ function bindExamEvents(exam) {
       updateProgress();
       saveDraft(exam.id);
     }
+  };
+
+  document.getElementById('secB_part2').addEventListener('click', handleBlockInteraction);
+  document.getElementById('secB_part2').addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const blk = e.target.closest('.word-block');
+      if (blk) {
+        e.preventDefault();
+        handleBlockInteraction(e);
+      }
+    }
   });
 
   document.querySelector('.exam-main').addEventListener('change', () => {
@@ -901,7 +1094,19 @@ function bindExamEvents(exam) {
   });
 
   document.getElementById('submitBtn').addEventListener('click', () => submitExam(exam));
-  document.getElementById('resetBtn').addEventListener('click', () => resetExam(exam));
+  document.getElementById('resetBtn').addEventListener('click', () => confirmResetExam(exam));
+  document.querySelectorAll('.js-submit-trigger').forEach(btn => {
+    btn.addEventListener('click', () => submitExam(exam));
+  });
+  document.querySelectorAll('.js-reset-trigger').forEach(btn => {
+    btn.addEventListener('click', () => confirmResetExam(exam));
+  });
+}
+
+function confirmResetExam(exam) {
+  if (confirm('Xoá toàn bộ câu trả lời của đề này và làm lại từ đầu?')) {
+    resetExam(exam);
+  }
 }
 
 function placeWordBlock(poolBlock) {
@@ -958,10 +1163,15 @@ function collectAnswers() {
 function updateProgress() {
   const answers = collectAnswers();
   const answeredCount = Object.keys(answers).length;
-  const countEl = document.getElementById('count');
-  const fillEl = document.getElementById('fill');
-  if (countEl) countEl.textContent = `${answeredCount} / 50 answered`;
-  if (fillEl) fillEl.style.width = `${(answeredCount / 50) * 100}%`;
+  document.querySelectorAll('.js-count-full').forEach(el => {
+    el.textContent = `${answeredCount} / 50 answered`;
+  });
+  document.querySelectorAll('.js-count-short').forEach(el => {
+    el.textContent = `${answeredCount}/50`;
+  });
+  document.querySelectorAll('.js-fill').forEach(el => {
+    el.style.width = `${(answeredCount / 50) * 100}%`;
+  });
 
   if (!state.lastReport) {
     document.querySelectorAll('.nav-dot').forEach(dot => {
@@ -979,10 +1189,15 @@ function startTimer() {
     if (state.remainingSeconds > 0) {
       state.remainingSeconds -= 1;
     }
-    const timerText = document.getElementById('timerText');
+    const formatted = formatDuration(state.remainingSeconds);
+    document.querySelectorAll('.js-timer-text').forEach(el => {
+      el.textContent = formatted;
+    });
+    const isWarn = state.remainingSeconds <= 300;
     const timerPill = document.getElementById('timerPill');
-    if (timerText) timerText.textContent = formatDuration(state.remainingSeconds);
-    if (timerPill) timerPill.classList.toggle('warning', state.remainingSeconds <= 300);
+    const sidebarPill = document.getElementById('sidebarTimerPill');
+    if (timerPill) timerPill.classList.toggle('warning', isWarn);
+    if (sidebarPill) sidebarPill.classList.toggle('warning', isWarn);
   }, 1000);
 }
 
@@ -1043,6 +1258,13 @@ function restoreDraft(testId) {
 }
 
 async function submitExam(exam) {
+  const answers = collectAnswers();
+  const answeredCount = Object.keys(answers).length;
+  if (answeredCount < 50) {
+    const ok = confirm(`Bạn mới trả lời ${answeredCount}/50 câu. Bạn vẫn muốn nộp bài ngay chứ?`);
+    if (!ok) return;
+  }
+
   const submitBtn = document.getElementById('submitBtn');
   submitBtn.disabled = true;
   submitBtn.textContent = 'Grading...';
@@ -1052,7 +1274,7 @@ async function submitExam(exam) {
       student_name: document.getElementById('studentName').value.trim(),
       student_class: document.getElementById('studentClass').value.trim(),
       elapsed_seconds: state.elapsedSeconds,
-      answers: collectAnswers()
+      answers
     };
 
     let report;
@@ -1072,8 +1294,9 @@ async function submitExam(exam) {
     }
     state.lastReport = report;
     state.timerPaused = true;
-    const toggleTimerBtn = document.getElementById('toggleTimerBtn');
-    if (toggleTimerBtn) toggleTimerBtn.textContent = 'Paused';
+    document.querySelectorAll('.js-toggle-timer').forEach(b => {
+      b.textContent = 'Paused';
+    });
 
     applyGradingHighlights(report);
     renderScoreReport(exam, report);
@@ -1116,11 +1339,10 @@ function applyGradingHighlights(report) {
       }
     }
 
-    const navDot = document.querySelector(`.nav-dot[data-nav-q="${r.num}"]`);
-    if (navDot) {
+    document.querySelectorAll(`.nav-dot[data-nav-q="${r.num}"]`).forEach(navDot => {
       navDot.classList.remove('answered', 'correct', 'incorrect');
       navDot.classList.add(r.is_correct ? 'correct' : 'incorrect');
-    }
+    });
   });
 }
 
@@ -1153,35 +1375,37 @@ function renderScoreReport(exam, report) {
       </div>
     </div>
 
-    <table class="score-table">
-      <thead>
-        <tr>
-          <th>Section &amp; Part</th>
-          <th>Questions</th>
-          <th>Correct</th>
-          <th>Incorrect / Blank</th>
-          <th>Section Score</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${report.parts.map(p => `
+    <div class="table-wrap">
+      <table class="score-table">
+        <thead>
           <tr>
-            <td style="text-align:left;font-weight:600">${escapeHtml(p.title)}</td>
-            <td>${p.total_questions}</td>
-            <td style="color:#059669;font-weight:700">${p.correct}</td>
-            <td style="color:${p.incorrect > 0 ? '#e11d48' : '#059669'}">${p.incorrect}</td>
-            <td><b>${p.score.toFixed(1)}</b> / ${p.max_score.toFixed(1)}</td>
+            <th>Section &amp; Part</th>
+            <th>Questions</th>
+            <th>Correct</th>
+            <th>Incorrect / Blank</th>
+            <th>Section Score</th>
           </tr>
-        `).join('')}
-        <tr class="total-row">
-          <td style="text-align:left">TOTAL SCORE</td>
-          <td>${report.total_questions}</td>
-          <td style="color:#059669">${report.total_correct}</td>
-          <td>${report.total_questions - report.total_correct}</td>
-          <td>${report.ten_scale.toFixed(1)} / 10</td>
-        </tr>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          ${report.parts.map(p => `
+            <tr>
+              <td style="text-align:left;font-weight:600">${escapeHtml(p.title)}</td>
+              <td>${p.total_questions}</td>
+              <td style="color:#059669;font-weight:700">${p.correct}</td>
+              <td style="color:${p.incorrect > 0 ? '#e11d48' : '#059669'}">${p.incorrect}</td>
+              <td><b>${p.score.toFixed(1)}</b> / ${p.max_score.toFixed(1)}</td>
+            </tr>
+          `).join('')}
+          <tr class="total-row">
+            <td style="text-align:left">TOTAL SCORE</td>
+            <td>${report.total_questions}</td>
+            <td style="color:#059669">${report.total_correct}</td>
+            <td>${report.total_questions - report.total_correct}</td>
+            <td>${report.ten_scale.toFixed(1)} / 10</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <div class="key-box">
       <h4>FULL ANSWER KEY (Q1–Q50)</h4>
@@ -1235,14 +1459,20 @@ function resetExam(exam) {
     resultBox.style.display = 'none';
     resultBox.innerHTML = '';
   }
-  const timerText = document.getElementById('timerText');
+  const formatted = formatDuration(state.remainingSeconds);
+  document.querySelectorAll('.js-timer-text').forEach(el => {
+    el.textContent = formatted;
+  });
   const timerPill = document.getElementById('timerPill');
-  const toggleBtn = document.getElementById('toggleTimerBtn');
-  if (timerText) timerText.textContent = formatDuration(state.remainingSeconds);
+  const sidebarPill = document.getElementById('sidebarTimerPill');
   if (timerPill) timerPill.classList.remove('warning');
-  if (toggleBtn) toggleBtn.textContent = 'Pause';
+  if (sidebarPill) sidebarPill.classList.remove('warning');
+  document.querySelectorAll('.js-toggle-timer').forEach(b => {
+    b.textContent = 'Pause';
+  });
 
   state.activePart1Select = document.querySelector('.p1-select');
+  syncActiveSelectHighlight();
   syncWordBank();
   updateProgress();
   window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -2,7 +2,19 @@
 
 const appEl = document.getElementById('app');
 
+const IS_STATIC_HOST =
+  window.location.hostname.endsWith('github.io') ||
+  window.location.protocol === 'file:';
+
+const BASE_PREFIX = (() => {
+  if (!window.location.hostname.endsWith('github.io')) return '';
+  const segs = window.location.pathname.split('/').filter(Boolean);
+  return segs.length ? `/${segs[0]}` : '';
+})();
+
 let state = {
+  staticMode: IS_STATIC_HOST,
+  rawExamsCache: null,
   tests: [],
   history: [],
   filter: 'all',
@@ -64,6 +76,15 @@ function stopTimer() {
 }
 
 function navigate(path) {
+  if (state.staticMode) {
+    const targetHash = path === '/' ? '#/' : `#${path}`;
+    if (window.location.hash !== targetHash) {
+      window.location.hash = targetHash;
+    } else {
+      handleRoute();
+    }
+    return;
+  }
   if (window.location.pathname !== path) {
     window.history.pushState({}, '', path);
   }
@@ -71,16 +92,241 @@ function navigate(path) {
 }
 
 window.addEventListener('popstate', handleRoute);
+window.addEventListener('hashchange', handleRoute);
 
 async function handleRoute() {
   stopTimer();
-  const path = window.location.pathname;
-  const match = path.match(/^\/test\/(\d+)$/);
-  if (match) {
-    await loadAndRenderExam(Number(match[1]));
+  const hashMatch = window.location.hash.match(/^#\/test\/(\d+)$/);
+  if (hashMatch) {
+    await loadAndRenderExam(Number(hashMatch[1]));
+    return;
+  }
+  const pathMatch = window.location.pathname.match(/\/test\/(\d+)$/);
+  if (pathMatch && !state.staticMode) {
+    await loadAndRenderExam(Number(pathMatch[1]));
   } else {
     await loadAndRenderHub();
   }
+}
+
+// ==================== STATIC / GITHUB PAGES DATA & GRADER ====================
+const STATIC_HISTORY_KEY = 'a2_static_history_v1';
+
+function getStaticHistory() {
+  try {
+    return JSON.parse(localStorage.getItem(STATIC_HISTORY_KEY) || '[]');
+  } catch (_) {
+    return [];
+  }
+}
+
+function saveStaticHistory(records) {
+  try {
+    localStorage.setItem(STATIC_HISTORY_KEY, JSON.stringify(records.slice(0, 200)));
+  } catch (_) {}
+}
+
+async function ensureStaticExamsLoaded() {
+  if (state.rawExamsCache) return state.rawExamsCache;
+  const ids = Array.from({ length: 13 }, (_, i) => i + 1);
+  const exams = await Promise.all(
+    ids.map(async id => {
+      const num = String(id).padStart(2, '0');
+      const res = await fetch(`${BASE_PREFIX}/data/tests/test_${num}.json`);
+      if (!res.ok) throw new Error(`Không thể tải test_${num}.json`);
+      return res.json();
+    })
+  );
+  exams.sort((a, b) => a.id - b.id);
+  state.rawExamsCache = exams;
+  return exams;
+}
+
+function toPublicExam(exam) {
+  return {
+    id: exam.id,
+    slug: exam.slug,
+    category: exam.category,
+    badge: exam.badge,
+    title: exam.title,
+    subtitle: exam.subtitle,
+    topic: exam.topic,
+    duration_minutes: exam.duration_minutes,
+    theme: exam.theme,
+    word_bank: exam.word_bank,
+    sec_a_part1: exam.sec_a_part1.map(({ num, pre, post }) => ({ num, pre, post })),
+    passage: exam.passage,
+    sec_a_part2: exam.sec_a_part2.map(({ num, statement }) => ({ num, statement })),
+    sec_a_part3_responses: exam.sec_a_part3_responses,
+    sec_a_part3: exam.sec_a_part3.map(({ num, question }) => ({ num, question })),
+    sec_a_part4: exam.sec_a_part4.map(({ num, pre, wrong_word, post }) => ({ num, pre, wrong_word, post })),
+    sec_b_part1: exam.sec_b_part1.map(({ num, sentence, options }) => ({ num, sentence, options })),
+    sec_b_part2: exam.sec_b_part2.map(({ num, blocks }) => ({ num, blocks })),
+    sec_b_part3: exam.sec_b_part3.map(({ num, pre, post }) => ({ num, pre, post }))
+  };
+}
+
+function normalizeStaticText(raw) {
+  return String(raw || '')
+    .trim()
+    .replace(/[’‘]/g, "'")
+    .split(/\s+/)
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
+}
+
+function normalizeStaticWordOrder(raw) {
+  return String(raw || '')
+    .replace(/[’‘]/g, "'")
+    .replace(/[.?!,]/g, '')
+    .split(/\s+/)
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
+}
+
+function gradeExamLocally(exam, payload) {
+  const answers = payload.answers || {};
+  const partCounts = [0, 0, 0, 0, 0, 0, 0];
+  const results = [];
+  const answerKey = [];
+
+  const getText = num => {
+    const val = answers[num] ?? answers[String(num)];
+    if (Array.isArray(val)) return val.join(' ').trim();
+    return String(val || '').trim();
+  };
+
+  exam.sec_a_part1.forEach(item => {
+    const user = getText(item.num);
+    const ok = normalizeStaticText(user) === normalizeStaticText(item.answer);
+    if (ok) partCounts[0]++;
+    results.push({ num: item.num, part: 'Section A – Part 1', is_correct: ok, user_answer: user, correct_answer: item.answer });
+    answerKey.push({ num: item.num, answer: item.answer });
+  });
+
+  exam.sec_a_part2.forEach(item => {
+    const user = getText(item.num);
+    const ok = normalizeStaticText(user) === normalizeStaticText(item.answer);
+    if (ok) partCounts[1]++;
+    results.push({ num: item.num, part: 'Section A – Part 2', is_correct: ok, user_answer: user, correct_answer: item.answer });
+    answerKey.push({ num: item.num, answer: item.answer });
+  });
+
+  exam.sec_a_part3.forEach(item => {
+    const user = getText(item.num);
+    const ok = normalizeStaticText(user) === normalizeStaticText(item.answer);
+    if (ok) partCounts[2]++;
+    results.push({ num: item.num, part: 'Section A – Part 3', is_correct: ok, user_answer: user, correct_answer: item.answer });
+    answerKey.push({ num: item.num, answer: item.answer });
+  });
+
+  exam.sec_a_part4.forEach(item => {
+    const user = getText(item.num);
+    const ok = normalizeStaticText(user) === normalizeStaticText(item.answer);
+    if (ok) partCounts[3]++;
+    results.push({ num: item.num, part: 'Section A – Part 4', is_correct: ok, user_answer: user, correct_answer: item.answer });
+    answerKey.push({ num: item.num, answer: item.answer });
+  });
+
+  exam.sec_b_part1.forEach(item => {
+    const user = getText(item.num);
+    const ok = normalizeStaticText(user) === normalizeStaticText(item.answer);
+    if (ok) partCounts[4]++;
+    results.push({ num: item.num, part: 'Section B – Part 1', is_correct: ok, user_answer: user, correct_answer: item.answer });
+    answerKey.push({ num: item.num, answer: item.answer });
+  });
+
+  exam.sec_b_part2.forEach(item => {
+    const rawVal = answers[item.num] ?? answers[String(item.num)];
+    const chosenBlocks = Array.isArray(rawVal)
+      ? rawVal
+      : String(rawVal || '').trim() ? String(rawVal).trim().split(/\s+/) : [];
+    const joined = chosenBlocks.join(' ');
+    const norm = normalizeStaticWordOrder(joined);
+    const ok = chosenBlocks.length === item.blocks.length &&
+      item.accepted.some(acc => normalizeStaticWordOrder(acc) === norm);
+    if (ok) partCounts[5]++;
+    results.push({ num: item.num, part: 'Section B – Part 2', is_correct: ok, user_answer: joined, correct_answer: item.display_answer });
+    answerKey.push({ num: item.num, answer: item.display_answer });
+  });
+
+  exam.sec_b_part3.forEach(item => {
+    const user = getText(item.num);
+    const norm = normalizeStaticText(user);
+    const ok = item.accepted.some(acc => normalizeStaticText(acc) === norm);
+    if (ok) partCounts[6]++;
+    results.push({ num: item.num, part: 'Section B – Part 3', is_correct: ok, user_answer: user, correct_answer: item.display_answer });
+    answerKey.push({ num: item.num, answer: item.display_answer });
+  });
+
+  const totalCorrect = partCounts.reduce((a, b) => a + b, 0);
+  const totalQuestions = 50;
+  const tenScale = Math.round((totalCorrect / totalQuestions) * 100) / 10;
+  const accuracyPercent = Math.round((totalCorrect / totalQuestions) * 100);
+
+  const partMeta = [
+    ['Section A – Part 1 (Word Box: 1–10)', 10],
+    ['Section A – Part 2 (Reading T/F: 11–18)', 8],
+    ['Section A – Part 3 (Matching: 19–24)', 6],
+    ['Section A – Part 4 (Spelling: 25–30)', 6],
+    ['Section B – Part 1 (Grammar Choice: 31–40)', 10],
+    ['Section B – Part 2 (Word Order: 41–45)', 5],
+    ['Section B – Part 3 (Word Forms: 46–50)', 5]
+  ];
+
+  const parts = partMeta.map(([title, maxQ], idx) => {
+    const correct = partCounts[idx];
+    const incorrect = maxQ - correct;
+    return {
+      title,
+      total_questions: maxQ,
+      correct,
+      incorrect,
+      score: Math.round(correct * 0.2 * 10) / 10,
+      max_score: Math.round(maxQ * 0.2 * 10) / 10
+    };
+  });
+
+  const now = new Date();
+  const submittedAt = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')} · ${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()}`;
+  const studentName = (payload.student_name || '').trim() || 'Not entered';
+  const studentClass = (payload.student_class || '').trim() || '—';
+
+  const record = {
+    id: `${Date.now()}-${exam.id}`,
+    test_id: exam.id,
+    test_title: exam.title,
+    category: exam.category,
+    student_name: studentName,
+    student_class: studentClass,
+    total_correct: totalCorrect,
+    total_questions: totalQuestions,
+    ten_scale: tenScale,
+    accuracy_percent: accuracyPercent,
+    elapsed_seconds: payload.elapsed_seconds || 0,
+    submitted_at: submittedAt
+  };
+  const history = getStaticHistory();
+  history.unshift(record);
+  saveStaticHistory(history);
+
+  return {
+    test_id: exam.id,
+    test_title: exam.title,
+    student_name: studentName,
+    student_class: studentClass,
+    submitted_at: submittedAt,
+    elapsed_seconds: payload.elapsed_seconds || 0,
+    total_correct: totalCorrect,
+    total_questions: totalQuestions,
+    ten_scale: tenScale,
+    accuracy_percent: accuracyPercent,
+    parts,
+    results,
+    answer_key: answerKey
+  };
 }
 
 // ==================== HUB VIEW ====================
@@ -91,12 +337,43 @@ async function loadAndRenderHub() {
   document.title = 'A2.1 – Progress Test 2 Practice Portal';
 
   try {
-    const [testsRes, histRes] = await Promise.all([
-      fetch('/api/tests'),
-      fetch('/api/history')
-    ]);
-    state.tests = await testsRes.json();
-    state.history = await histRes.json();
+    if (!state.staticMode) {
+      const [testsRes, histRes] = await Promise.all([
+        fetch('/api/tests'),
+        fetch('/api/history')
+      ]);
+      if (testsRes.ok && histRes.ok) {
+        state.tests = await testsRes.json();
+        state.history = await histRes.json();
+        renderHub();
+        return;
+      }
+      state.staticMode = true;
+    }
+
+    const exams = await ensureStaticExamsLoaded();
+    const history = getStaticHistory();
+    state.history = history;
+    state.tests = exams.map(exam => {
+      const attempts = history.filter(h => h.test_id === exam.id);
+      const bestTen = attempts.length ? Math.max(...attempts.map(a => a.ten_scale)) : null;
+      const bestCorrect = attempts.length ? Math.max(...attempts.map(a => a.total_correct)) : null;
+      return {
+        id: exam.id,
+        slug: exam.slug,
+        category: exam.category,
+        badge: exam.badge,
+        title: exam.title,
+        subtitle: exam.subtitle,
+        topic: exam.topic,
+        duration_minutes: exam.duration_minutes,
+        question_count: 50,
+        theme: exam.theme,
+        attempt_count: attempts.length,
+        best_score_ten: bestTen,
+        best_correct: bestCorrect
+      };
+    });
     renderHub();
   } catch (err) {
     appEl.innerHTML = `<div class="loading-screen"><p>Không thể tải dữ liệu đề thi: ${escapeHtml(err.message)}</p></div>`;
@@ -205,7 +482,11 @@ function renderHub() {
   const clearBtn = document.getElementById('clearHistoryBtn');
   if (clearBtn) {
     clearBtn.addEventListener('click', async () => {
-      await fetch('/api/history', { method: 'DELETE' });
+      if (state.staticMode) {
+        saveStaticHistory([]);
+      } else {
+        await fetch('/api/history', { method: 'DELETE' });
+      }
       state.history = [];
       await loadAndRenderHub();
     });
@@ -287,12 +568,27 @@ appEl.addEventListener('click', e => {
 async function loadAndRenderExam(id) {
   appEl.innerHTML = '<div class="loading-screen"><div class="spinner"></div><p>Đang tải đề thi...</p></div>';
   try {
-    const res = await fetch(`/api/tests/${id}`);
-    if (!res.ok) {
-      appEl.innerHTML = `<div class="loading-screen"><p>Không tìm thấy đề thi #${id}.</p><button class="main-btn" onclick="history.back()">Quay lại</button></div>`;
-      return;
+    let exam = null;
+    if (!state.staticMode) {
+      const res = await fetch(`/api/tests/${id}`);
+      if (res.ok) {
+        exam = await res.json();
+      } else if (res.status === 404) {
+        appEl.innerHTML = `<div class="loading-screen"><p>Không tìm thấy đề thi #${id}.</p><button class="main-btn" onclick="history.back()">Quay lại</button></div>`;
+        return;
+      } else {
+        state.staticMode = true;
+      }
     }
-    const exam = await res.json();
+    if (!exam) {
+      const exams = await ensureStaticExamsLoaded();
+      const raw = exams.find(e => e.id === id);
+      if (!raw) {
+        appEl.innerHTML = `<div class="loading-screen"><p>Không tìm thấy đề thi #${id}.</p><button class="main-btn" onclick="history.back()">Quay lại</button></div>`;
+        return;
+      }
+      exam = toPublicExam(raw);
+    }
     state.currentExam = exam;
     state.lastReport = null;
     state.remainingSeconds = exam.duration_minutes * 60;
@@ -759,14 +1055,21 @@ async function submitExam(exam) {
       answers: collectAnswers()
     };
 
-    const res = await fetch(`/api/tests/${exam.id}/submit`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-
-    if (!res.ok) throw new Error('Grading failed');
-    const report = await res.json();
+    let report;
+    if (state.staticMode) {
+      const exams = await ensureStaticExamsLoaded();
+      const raw = exams.find(e => e.id === exam.id);
+      if (!raw) throw new Error('Exam not found');
+      report = gradeExamLocally(raw, payload);
+    } else {
+      const res = await fetch(`/api/tests/${exam.id}/submit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('Grading failed');
+      report = await res.json();
+    }
     state.lastReport = report;
     state.timerPaused = true;
     const toggleTimerBtn = document.getElementById('toggleTimerBtn');

@@ -1,0 +1,132 @@
+{
+  "id": 10,
+  "slug": "test-10",
+  "category": "practice",
+  "badge": "Đề phát triển #7",
+  "title": "A2.1 – Progress Test 2 – Practice 7",
+  "subtitle": "Vocabulary & Grammar Assessment · Second-Hand Treasures",
+  "topic": "Clothes, Shopping & Vintage Style",
+  "duration_minutes": 40,
+  "theme": {
+    "name": "olive",
+    "dark": "#365314",
+    "primary": "#4d7c0f",
+    "accent": "#65a30d",
+    "bright": "#84cc16",
+    "soft": "#ecfccb",
+    "pale": "#f7fee7",
+    "line": "#d9f99d",
+    "ink": "#1a2e05"
+  },
+  "word_bank": [
+    "wear", "mend", "iron", "match", "exchange", "borrow",
+    "button", "donate", "sell", "try", "fold", "cost"
+  ],
+  "sec_a_part1": [
+    { "num": 1, "pre": "You can ", "post": " on that green coat in the changing room.", "answer": "try" },
+    { "num": 2, "pre": "Those brown leather boots ", "post": " your wool jacket really well.", "answer": "match" },
+    { "num": 3, "pre": "I need to ", "post": " my white shirt before the job interview.", "answer": "iron" },
+    { "num": 4, "pre": "We decided to ", "post": " our old children's clothes to a local charity.", "answer": "donate" },
+    { "num": 5, "pre": "My grandmother can ", "post": " torn pockets with a needle and thread.", "answer": "mend" },
+    { "num": 6, "pre": "Do you usually ", "post": " casual jeans or smart trousers at work?", "answer": "wear" },
+    { "num": 7, "pre": "If these shoes are too tight, you can ", "post": " them for a larger size.", "answer": "exchange" },
+    { "num": 8, "pre": "How much did that vintage leather handbag ", "post": "?", "answer": "cost" },
+    { "num": 9, "pre": "Does this small shop ", "post": " second-hand winter jackets?", "answer": "sell" },
+    { "num": 10, "pre": "Can I ", "post": " your warm scarf for the walk home?", "answer": "borrow" }
+  ],
+  "passage": {
+    "title": "SECOND-HAND TREASURES",
+    "subtitle": "Oliver's vintage clothes shop",
+    "paragraphs": [
+      "Near the main train station in Bath, Oliver runs a small shop called Second-Hand Treasures. He buys clean, good-quality vintage clothes from local people and sells them at low prices to students and tourists.",
+      "Inside the shop, wooden shelves are full of denim jackets, colourful scarves, leather bags and old vinyl records. There is also a quiet corner with a large mirror and a blue curtain where customers can try on coats and dresses.",
+      "Oliver checks every item carefully before putting it on a hanger. If a jacket is missing a button or has a small hole, he repairs it himself on a sewing machine at the back of the shop. He says good clothes should last for many years instead of going into the rubbish.",
+      "Every Friday afternoon, university students visit the shop to look for unusual outfits for weekend parties. Oliver enjoys helping them find something special that nobody else is wearing."
+    ]
+  },
+  "sec_a_part2": [
+    { "num": 11, "statement": "Oliver's shop is far away from the train station in Bath.", "answer": "False" },
+    { "num": 12, "statement": "He sells second-hand clothes at affordable prices.", "answer": "True" },
+    { "num": 13, "statement": "The shop only sells clothes and nothing else.", "answer": "False" },
+    { "num": 14, "statement": "There is a place with a mirror where customers can try on clothes.", "answer": "True" },
+    { "num": 15, "statement": "Oliver throws away jackets that are missing a button.", "answer": "False" },
+    { "num": 16, "statement": "He uses a sewing machine to repair small holes in clothes.", "answer": "True" },
+    { "num": 17, "statement": "University students often visit his shop on Friday afternoons.", "answer": "True" },
+    { "num": 18, "statement": "Students visit the shop because they want every outfit to look the same.", "answer": "False" }
+  ],
+  "sec_a_part3_responses": [
+    { "letter": "a", "text": "Usually medium, or size 38 in jackets." },
+    { "letter": "b", "text": "It's behind the wooden shelf, next to the mirror." },
+    { "letter": "c", "text": "Only twenty-five pounds because it's second-hand." },
+    { "letter": "d", "text": "Yes, we've got several dark blue ones on that rail." },
+    { "letter": "e", "text": "Yes, it fits perfectly and feels very warm." },
+    { "letter": "f", "text": "Wait seven days, and you can bring it back with the receipt." }
+  ],
+  "sec_a_part3": [
+    { "num": 19, "question": "What size do you wear?", "answer": "a" },
+    { "num": 20, "question": "How much is this brown wool coat?", "answer": "c" },
+    { "num": 21, "question": "Where is the changing room?", "answer": "b" },
+    { "num": 22, "question": "Have you got any blue denim jackets?", "answer": "d" },
+    { "num": 23, "question": "Does that sweater fit you well?", "answer": "e" },
+    { "num": 24, "question": "Can I return these trousers if they are too long?", "answer": "f" }
+  ],
+  "sec_a_part4": [
+    { "num": 25, "pre": "She wore a warm wool ", "wrong_word": "sweter", "post": " in December.", "answer": "sweater" },
+    { "num": 26, "pre": "He put on his favourite pair of ", "wrong_word": "trouserss", "post": ".", "answer": "trousers" },
+    { "num": 27, "pre": "There is a silver ", "wrong_word": "buton", "post": " missing from this shirt.", "answer": "button" },
+    { "num": 28, "pre": "Look in the ", "wrong_word": "miror", "post": " to check your hat.", "answer": "mirror" },
+    { "num": 29, "pre": "This leather ", "wrong_word": "jaket", "post": " came from a vintage shop.", "answer": "jacket" },
+    { "num": 30, "pre": "I keep my keys in my coat ", "wrong_word": "poket", "post": ".", "answer": "pocket" }
+  ],
+  "sec_b_part1": [
+    { "num": 31, "sentence": "Oliver ______ checks every coat carefully before selling it.", "options": ["always", "never", "seldom"], "answer": "always" },
+    { "num": 32, "sentence": "______ the shop got any brown leather boots in size 41?", "options": ["Has", "Have", "Are"], "answer": "Has" },
+    { "num": 33, "sentence": "There aren't ______ designer dresses in the sale box today.", "options": ["much", "any", "a little"], "answer": "any" },
+    { "num": 34, "sentence": "How ______ scarves have you got in your wardrobe?", "options": ["much", "many", "little"], "answer": "many" },
+    { "num": 35, "sentence": "This striped umbrella isn't Oliver's; it is ______.", "options": ["my", "mine", "me"], "answer": "mine" },
+    { "num": 36, "sentence": "______ a full-length mirror in the changing room?", "options": ["Is there", "Are there", "There is"], "answer": "Is there" },
+    { "num": 37, "sentence": "My brother ______ buys expensive clothes because he prefers vintage shops.", "options": ["rarely", "always", "usually"], "answer": "rarely" },
+    { "num": 38, "sentence": "We have got ______ old vinyl records on the top shelf.", "options": ["a little", "a few", "much"], "answer": "a few" },
+    { "num": 39, "sentence": "How ______ money did you spend on that vintage bag?", "options": ["many", "much", "few"], "answer": "much" },
+    { "num": 40, "sentence": "Have the tourists got enough cash? Yes, they ______.", "options": ["have", "do", "are"], "answer": "have" }
+  ],
+  "sec_b_part2": [
+    {
+      "num": 41,
+      "blocks": ["often", "vintage", "Students", "on Fridays.", "buy", "clothes"],
+      "display_answer": "Students often buy vintage clothes on Fridays.",
+      "accepted": ["students often buy vintage clothes on fridays"]
+    },
+    {
+      "num": 42,
+      "blocks": ["many", "in the shop?", "How", "mirrors", "there", "are"],
+      "display_answer": "How many mirrors are there in the shop?",
+      "accepted": ["how many mirrors are there in the shop"]
+    },
+    {
+      "num": 43,
+      "blocks": ["got", "leather", "Has", "boots?", "Oliver", "any"],
+      "display_answer": "Has Oliver got any leather boots?",
+      "accepted": ["has oliver got any leather boots"]
+    },
+    {
+      "num": 44,
+      "blocks": ["scarves", "There", "bright", "are", "on the table.", "some"],
+      "display_answer": "There are some bright scarves on the table.",
+      "accepted": ["there are some bright scarves on the table"]
+    },
+    {
+      "num": 45,
+      "blocks": ["denim", "is", "Whose", "jacket", "this?"],
+      "display_answer": "Whose denim jacket is this?",
+      "accepted": ["whose denim jacket is this"]
+    }
+  ],
+  "sec_b_part3": [
+    { "num": 46, "pre": "Look at Oliver! I really like ", "post": " (he) green wool coat.", "display_answer": "his", "accepted": ["his"] },
+    { "num": 47, "pre": "My gloves are black, and ", "post": " (you) are dark brown.", "display_answer": "yours", "accepted": ["yours"] },
+    { "num": 48, "pre": "", "post": " (be) there any winter hats on the back shelf?", "display_answer": "Are", "accepted": ["are"] },
+    { "num": 49, "pre": "Oliver ", "post": " (fix) torn pockets on his sewing machine.", "display_answer": "fixes", "accepted": ["fixes"] },
+    { "num": 50, "pre": "There ", "post": " (not/be) any space left on the coat rack.", "display_answer": "isn't", "accepted": ["isn't", "is not"] }
+  ]
+}

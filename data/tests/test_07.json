@@ -1,0 +1,132 @@
+{
+  "id": 7,
+  "slug": "test-07",
+  "category": "practice",
+  "badge": "Đề phát triển #4",
+  "title": "A2.1 – Progress Test 2 – Practice 4",
+  "subtitle": "Vocabulary & Grammar Assessment · Cycling to Work in York",
+  "topic": "Transport, City Places & Directions",
+  "duration_minutes": 40,
+  "theme": {
+    "name": "orange",
+    "dark": "#7c2d12",
+    "primary": "#c2410c",
+    "accent": "#ea580c",
+    "bright": "#f97316",
+    "soft": "#ffedd5",
+    "pale": "#fff7ed",
+    "line": "#fed7aa",
+    "ink": "#431407"
+  },
+  "word_bank": [
+    "cross", "ride", "miss", "follow", "park", "turn",
+    "catch", "walk", "reach", "stop", "drive", "leave"
+  ],
+  "sec_a_part1": [
+    { "num": 1, "pre": "Look both ways before you ", "post": " the busy road.", "answer": "cross" },
+    { "num": 2, "pre": "Go past the museum and ", "post": " left at the traffic lights.", "answer": "turn" },
+    { "num": 3, "pre": "I prefer to ", "post": " my bicycle to work when the weather is dry.", "answer": "ride" },
+    { "num": 4, "pre": "Hurry up, or we will ", "post": " the 8:15 train to Leeds!", "answer": "miss" },
+    { "num": 5, "pre": "You can ", "post": " your car behind the shopping centre for free.", "answer": "park" },
+    { "num": 6, "pre": "Just ", "post": " the green signs to find the railway station.", "answer": "follow" },
+    { "num": 7, "pre": "What time do you ", "post": " home in the morning?", "answer": "leave" },
+    { "num": 8, "pre": "It takes twenty minutes to ", "post": " the city centre by bus.", "answer": "reach" },
+    { "num": 9, "pre": "Does the number 14 bus ", "post": " outside the post office?", "answer": "stop" },
+    { "num": 10, "pre": "I usually ", "post": " the early tram when it rains heavily.", "answer": "catch" }
+  ],
+  "passage": {
+    "title": "CYCLING TO WORK IN YORK",
+    "subtitle": "A faster, healthier journey",
+    "paragraphs": [
+      "Two years ago, Tom used to drive his car to the office in the centre of York. However, the morning traffic was terrible, and it often took him forty-five minutes to travel just five kilometres. Finding a parking space near his office was also expensive.",
+      "Now, Tom rides his blue bicycle every weekday. He wears a bright yellow helmet and puts his laptop inside a waterproof backpack. He follows a quiet cycle path along the river, so he does not have to ride next to heavy buses or lorries.",
+      "The journey by bike only takes Tom eighteen minutes. He says cycling wakes him up better than a cup of strong coffee, and he feels much healthier than before. He saves about eighty pounds a month on petrol and parking tickets.",
+      "Only when there is snow or ice on the ground does Tom leave his bike at home and take the train instead. He hopes more people in his office will try cycling this summer."
+    ]
+  },
+  "sec_a_part2": [
+    { "num": 11, "statement": "Tom still drives his car to work every weekday.", "answer": "False" },
+    { "num": 12, "statement": "Tom's office is five kilometres away from his home.", "answer": "True" },
+    { "num": 13, "statement": "Parking near Tom's office used to cost a lot of money.", "answer": "True" },
+    { "num": 14, "statement": "Tom rides along a busy highway full of lorries.", "answer": "False" },
+    { "num": 15, "statement": "His cycle journey takes less than twenty minutes.", "answer": "True" },
+    { "num": 16, "statement": "Tom spends more money now than when he drove his car.", "answer": "False" },
+    { "num": 17, "statement": "Tom takes the train when there is snow or ice outside.", "answer": "True" },
+    { "num": 18, "statement": "Tom wants his colleagues to avoid riding bicycles.", "answer": "False" }
+  ],
+  "sec_a_part3_responses": [
+    { "letter": "a", "text": "Go straight on and take the second street on the right." },
+    { "letter": "b", "text": "About fifteen minutes on foot." },
+    { "letter": "c", "text": "Yes, every twenty minutes from Platform 2." },
+    { "letter": "d", "text": "By bicycle, unless it snows." },
+    { "letter": "e", "text": "It's opposite the town hall, next to the café." },
+    { "letter": "f", "text": "No, you can't. It's for buses only." }
+  ],
+  "sec_a_part3": [
+    { "num": 19, "question": "Excuse me, how do I get to the art gallery?", "answer": "a" },
+    { "num": 20, "question": "How far is the train station from here?", "answer": "b" },
+    { "num": 21, "question": "How do you usually travel to work?", "answer": "d" },
+    { "num": 22, "question": "Where is the nearest post office?", "answer": "e" },
+    { "num": 23, "question": "Are there frequent trains to Manchester?", "answer": "c" },
+    { "num": 24, "question": "Can I park my car in front of the school?", "answer": "f" }
+  ],
+  "sec_a_part4": [
+    { "num": 25, "pre": "My sister rides her ", "wrong_word": "bycicle", "post": " to college.", "answer": "bicycle" },
+    { "num": 26, "pre": "Turn right at the next ", "wrong_word": "roundabaut", "post": ".", "answer": "roundabout" },
+    { "num": 27, "pre": "We waited at the bus ", "wrong_word": "stasion", "post": " for ten minutes.", "answer": "station" },
+    { "num": 28, "pre": "Always wear a ", "wrong_word": "helmit", "post": " when you cycle.", "answer": "helmet" },
+    { "num": 29, "pre": "There is a stone ", "wrong_word": "brige", "post": " across the river.", "answer": "bridge" },
+    { "num": 30, "pre": "The ", "wrong_word": "trafic", "post": " is always heavy at five o'clock.", "answer": "traffic" }
+  ],
+  "sec_b_part1": [
+    { "num": 31, "sentence": "Tom ______ wears his yellow helmet when he rides his bike.", "options": ["always", "never", "rarely"], "answer": "always" },
+    { "num": 32, "sentence": "______ your brother got a motorbike?", "options": ["Has", "Have", "Does"], "answer": "Has" },
+    { "num": 33, "sentence": "There isn't ______ traffic on the river path.", "options": ["many", "any", "a few"], "answer": "any" },
+    { "num": 34, "sentence": "How ______ kilometres is it from your house to the office?", "options": ["much", "many", "little"], "answer": "many" },
+    { "num": 35, "sentence": "______ two bus stops near the town library.", "options": ["There is", "There are", "Is there"], "answer": "There are" },
+    { "num": 36, "sentence": "Whose blue bicycle is parked outside? It's ______.", "options": ["his", "him", "he"], "answer": "his" },
+    { "num": 37, "sentence": "I ______ take the bus on sunny days because I love walking.", "options": ["always", "seldom", "often"], "answer": "seldom" },
+    { "num": 38, "sentence": "How ______ time does it take to walk across the park?", "options": ["many", "much", "few"], "answer": "much" },
+    { "num": 39, "sentence": "We have got ______ minutes before the train arrives.", "options": ["a little", "a few", "much"], "answer": "a few" },
+    { "num": 40, "sentence": "______ a cycle path near your street?", "options": ["Are there", "Is there", "Has there"], "answer": "Is there" }
+  ],
+  "sec_b_part2": [
+    {
+      "num": 41,
+      "blocks": ["never", "to work", "Tom", "drives", "on sunny days."],
+      "display_answer": "Tom never drives to work on sunny days.",
+      "accepted": ["tom never drives to work on sunny days"]
+    },
+    {
+      "num": 42,
+      "blocks": ["got", "Has", "a map", "your friend", "of the city?"],
+      "display_answer": "Has your friend got a map of the city?",
+      "accepted": ["has your friend got a map of the city"]
+    },
+    {
+      "num": 43,
+      "blocks": ["much", "petrol", "How", "does", "need?", "the car"],
+      "display_answer": "How much petrol does the car need?",
+      "accepted": ["how much petrol does the car need"]
+    },
+    {
+      "num": 44,
+      "blocks": ["along the river.", "a quiet", "There is", "cycle path"],
+      "display_answer": "There is a quiet cycle path along the river.",
+      "accepted": ["there is a quiet cycle path along the river"]
+    },
+    {
+      "num": 45,
+      "blocks": ["yellow", "is", "That", "helmet", "mine."],
+      "display_answer": "That yellow helmet is mine.",
+      "accepted": ["that yellow helmet is mine"]
+    }
+  ],
+  "sec_b_part3": [
+    { "num": 46, "pre": "My friends lock ", "post": " (they) bicycles behind the office.", "display_answer": "their", "accepted": ["their"] },
+    { "num": 47, "pre": "Is this black backpack ", "post": " (you)?", "display_answer": "yours", "accepted": ["yours"] },
+    { "num": 48, "pre": "", "post": " (be) there a train station near the museum?", "display_answer": "Is", "accepted": ["is"] },
+    { "num": 49, "pre": "The first bus ", "post": " (pass) my street at 6:10 a.m.", "display_answer": "passes", "accepted": ["passes"] },
+    { "num": 50, "pre": "There ", "post": " (not/be) any parking spaces left near the station.", "display_answer": "aren't", "accepted": ["aren't", "are not"] }
+  ]
+}

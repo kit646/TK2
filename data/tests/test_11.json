@@ -1,0 +1,132 @@
+{
+  "id": 11,
+  "slug": "test-11",
+  "category": "practice",
+  "badge": "Đề phát triển #8",
+  "title": "A2.1 – Progress Test 2 – Practice 8",
+  "subtitle": "Vocabulary & Grammar Assessment · Grandpa's Sunday Lunch",
+  "topic": "Family Life & Home Meals",
+  "duration_minutes": 40,
+  "theme": {
+    "name": "terracotta",
+    "dark": "#7c2d12",
+    "primary": "#9a3412",
+    "accent": "#c2410c",
+    "bright": "#ea580c",
+    "soft": "#ffedd5",
+    "pale": "#fff7ed",
+    "line": "#fed7aa",
+    "ink": "#431407"
+  },
+  "word_bank": [
+    "gather", "roast", "set", "clear", "pass", "celebrate",
+    "laugh", "remember", "taste", "slice", "help", "bake"
+  ],
+  "sec_a_part1": [
+    { "num": 1, "pre": "Every Sunday, our whole family likes to ", "post": " at Grandpa's house.", "answer": "gather" },
+    { "num": 2, "pre": "Could you ", "post": " the table with knives, forks and napkins?", "answer": "set" },
+    { "num": 3, "pre": "Grandpa is going to ", "post": " a whole chicken with garlic and herbs.", "answer": "roast" },
+    { "num": 4, "pre": "Please ", "post": " me the salt from the other end of the table.", "answer": "pass" },
+    { "num": 5, "pre": "After lunch, the children help ", "post": " the dirty plates from the table.", "answer": "clear" },
+    { "num": 6, "pre": "We are going to ", "post": " Grandma's seventieth birthday next month.", "answer": "celebrate" },
+    { "num": 7, "pre": "Uncle Ben tells funny stories that make everyone ", "post": " loudly.", "answer": "laugh" },
+    { "num": 8, "pre": "I still ", "post": " my first Sunday lunch in Cardiff when I was six.", "answer": "remember" },
+    { "num": 9, "pre": "Let's ", "post": " an apple pie for dessert after dinner.", "answer": "bake" },
+    { "num": 10, "pre": "My cousins always ", "post": " Grandpa wash the potatoes in the kitchen.", "answer": "help" }
+  ],
+  "passage": {
+    "title": "GRANDPA'S SUNDAY LUNCH",
+    "subtitle": "A weekly family tradition in Cardiff",
+    "paragraphs": [
+      "Every Sunday at midday, twelve members of the Davies family arrive at Grandpa Arthur's red-brick house in Cardiff. Arthur is seventy-four years old, and cooking Sunday lunch for his children and grandchildren is the highlight of his week.",
+      "Arthur always starts cooking at nine o'clock in the morning. He roasts beef or chicken in the oven, boils fresh carrots and peas from his garden, and makes a large bowl of warm gravy. Meanwhile, Grandma Megan bakes a sweet fruit crumble with apples or pears.",
+      "The dining room has got a huge oak table that Arthur built forty years ago. Before everyone sits down at one o'clock, the youngest grandchildren carefully set the table with white plates and colourful glasses. There is always plenty of talking, joking and sharing news from school and work.",
+      "When lunch finishes, nobody leaves immediately. The adults drink tea in the living room while the children play chess or draw pictures on the rug. Everyone agrees that Grandpa's house feels like the warmest place in the city."
+    ]
+  },
+  "sec_a_part2": [
+    { "num": 11, "statement": "Twelve family members visit Grandpa Arthur's house every Sunday.", "answer": "True" },
+    { "num": 12, "statement": "Arthur begins preparing Sunday lunch at twelve o'clock.", "answer": "False" },
+    { "num": 13, "statement": "The carrots and peas come from Arthur's own garden.", "answer": "True" },
+    { "num": 14, "statement": "Grandma Megan buys fruit crumble from a supermarket.", "answer": "False" },
+    { "num": 15, "statement": "Arthur bought the oak dining table last year.", "answer": "False" },
+    { "num": 16, "statement": "The youngest grandchildren help put plates and glasses on the table.", "answer": "True" },
+    { "num": 17, "statement": "Everyone goes straight home as soon as lunch ends.", "answer": "False" },
+    { "num": 18, "statement": "After lunch, the adults drink tea in the living room.", "answer": "True" }
+  ],
+  "sec_a_part3_responses": [
+    { "letter": "a", "text": "Around one o'clock, right after the roast is ready." },
+    { "letter": "b", "text": "Yes, we've got roast chicken, potatoes and apple crumble." },
+    { "letter": "c", "text": "Twelve people, including four grandchildren." },
+    { "letter": "d", "text": "They're in the top drawer next to the sink." },
+    { "letter": "e", "text": "He's very kind, cheerful and a wonderful cook." },
+    { "letter": "f", "text": "Yes, please. Just a small cup with milk." }
+  ],
+  "sec_a_part3": [
+    { "num": 19, "question": "What time do we eat lunch on Sundays?", "answer": "a" },
+    { "num": 20, "question": "How many people are coming for dinner?", "answer": "c" },
+    { "num": 21, "question": "Where do you keep the clean forks and knives?", "answer": "d" },
+    { "num": 22, "question": "Would you like a cup of tea after lunch?", "answer": "f" },
+    { "num": 23, "question": "What is your grandfather like?", "answer": "e" },
+    { "num": 24, "question": "Have we got anything sweet for dessert?", "answer": "b" }
+  ],
+  "sec_a_part4": [
+    { "num": 25, "pre": "My ", "wrong_word": "grandfater", "post": " grows vegetables in his garden.", "answer": "grandfather" },
+    { "num": 26, "pre": "Put the clean ", "wrong_word": "plaites", "post": " in the middle of the table.", "answer": "plates" },
+    { "num": 27, "pre": "We had warm apple pie for ", "wrong_word": "desart", "post": ".", "answer": "dessert" },
+    { "num": 28, "pre": "The family sat around the ", "wrong_word": "dinning", "post": " table.", "answer": "dining" },
+    { "num": 29, "pre": "My ", "wrong_word": "cousen", "post": " Olivia lives in Swansea.", "answer": "cousin" },
+    { "num": 30, "pre": "Pass me a clean ", "wrong_word": "napken", "post": ", please.", "answer": "napkin" }
+  ],
+  "sec_b_part1": [
+    { "num": 31, "sentence": "The Davies family ______ has Sunday lunch together at Grandpa's house.", "options": ["usually", "never", "rarely"], "answer": "usually" },
+    { "num": 32, "sentence": "______ Grandpa Arthur got a vegetable garden behind his house?", "options": ["Has", "Have", "Does"], "answer": "Has" },
+    { "num": 33, "sentence": "There isn't ______ gravy left in the jug.", "options": ["many", "much", "a few"], "answer": "much" },
+    { "num": 34, "sentence": "How ______ grandchildren has Arthur got?", "options": ["much", "many", "little"], "answer": "many" },
+    { "num": 35, "sentence": "That colourful glass isn't my sister's; it's ______.", "options": ["my", "mine", "me"], "answer": "mine" },
+    { "num": 36, "sentence": "______ twelve chairs around the big oak table.", "options": ["There is", "There are", "Is there"], "answer": "There are" },
+    { "num": 37, "sentence": "The children ______ leave before four o'clock because they love playing chess.", "options": ["never", "always", "usually"], "answer": "never" },
+    { "num": 38, "sentence": "We have got ______ fresh pears from Grandma's tree.", "options": ["a little", "a few", "much"], "answer": "a few" },
+    { "num": 39, "sentence": "Have you got any cold water on the table? Yes, we ______.", "options": ["do", "are", "have"], "answer": "have" },
+    { "num": 40, "sentence": "______ chessboard is this on the living room rug?", "options": ["Who", "Whose", "Who's"], "answer": "Whose" }
+  ],
+  "sec_b_part2": [
+    {
+      "num": 41,
+      "blocks": ["at nine", "usually", "cooking", "Grandpa", "starts", "o'clock."],
+      "display_answer": "Grandpa usually starts cooking at nine o'clock.",
+      "accepted": ["grandpa usually starts cooking at nine o'clock"]
+    },
+    {
+      "num": 42,
+      "blocks": ["there", "any", "Are", "garden?", "in the", "strawberries"],
+      "display_answer": "Are there any strawberries in the garden?",
+      "accepted": ["are there any strawberries in the garden"]
+    },
+    {
+      "num": 43,
+      "blocks": ["got", "big", "has", "oak table.", "The dining room", "a"],
+      "display_answer": "The dining room has got a big oak table.",
+      "accepted": ["the dining room has got a big oak table"]
+    },
+    {
+      "num": 44,
+      "blocks": ["much", "do", "How", "need?", "sugar", "we"],
+      "display_answer": "How much sugar do we need?",
+      "accepted": ["how much sugar do we need"]
+    },
+    {
+      "num": 45,
+      "blocks": ["are", "pictures", "Those", "drawn", "theirs."],
+      "display_answer": "Those drawn pictures are theirs.",
+      "accepted": ["those drawn pictures are theirs"]
+    }
+  ],
+  "sec_b_part3": [
+    { "num": 46, "pre": "Megan makes dessert for ", "post": " (she) twelve family guests.", "display_answer": "her", "accepted": ["her"] },
+    { "num": 47, "pre": "Our cousins brought a cake, and we brought ", "post": " (we).", "display_answer": "ours", "accepted": ["ours"] },
+    { "num": 48, "pre": "", "post": " (be) there enough chairs for everyone in the dining room?", "display_answer": "Are", "accepted": ["are"] },
+    { "num": 49, "pre": "Grandpa always ", "post": " (watch) the children play chess after lunch.", "display_answer": "watches", "accepted": ["watches"] },
+    { "num": 50, "pre": "There ", "post": " (not/be) any cold milk in the fridge.", "display_answer": "isn't", "accepted": ["isn't", "is not"] }
+  ]
+}

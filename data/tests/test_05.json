@@ -1,0 +1,132 @@
+{
+  "id": 5,
+  "slug": "test-05",
+  "category": "practice",
+  "badge": "Đề phát triển #2",
+  "title": "A2.1 – Progress Test 2 – Practice 2",
+  "subtitle": "Vocabulary & Grammar Assessment · Sunday at Riverside Market",
+  "topic": "Shopping & Farmers' Market",
+  "duration_minutes": 40,
+  "theme": {
+    "name": "rose",
+    "dark": "#881337",
+    "primary": "#be123c",
+    "accent": "#e11d48",
+    "bright": "#f43f5e",
+    "soft": "#ffe4e6",
+    "pale": "#fff1f2",
+    "line": "#fecdd3",
+    "ink": "#4c0519"
+  },
+  "word_bank": [
+    "weigh", "bargain", "count", "choose", "compare", "spend",
+    "save", "return", "carry", "offer", "wrap", "queue"
+  ],
+  "sec_a_part1": [
+    { "num": 1, "pre": "Always ", "post": " prices at two different stalls before buying fruit.", "answer": "compare" },
+    { "num": 2, "pre": "The seller will ", "post": " the apples on the scale to tell you the price.", "answer": "weigh" },
+    { "num": 3, "pre": "I don't like to ", "post": " for a long time at the busy checkout.", "answer": "queue" },
+    { "num": 4, "pre": "Did the shopkeeper ", "post": " the glass jar in newspaper so it wouldn't break?", "answer": "wrap" },
+    { "num": 5, "pre": "How much money do you usually ", "post": " on groceries every week?", "answer": "spend" },
+    { "num": 6, "pre": "You can ", "post": " a lot of money if you cook at home.", "answer": "save" },
+    { "num": 7, "pre": "Can I ", "post": " this jacket if it doesn't fit my brother?", "answer": "return" },
+    { "num": 8, "pre": "Please ", "post": " the change carefully when the cashier hands it to you.", "answer": "count" },
+    { "num": 9, "pre": "Local farmers ", "post": " free samples of cheese at the weekend market.", "answer": "offer" },
+    { "num": 10, "pre": "These cloth bags are strong enough to ", "post": " heavy potatoes.", "answer": "carry" }
+  ],
+  "passage": {
+    "title": "SUNDAY AT RIVERSIDE MARKET",
+    "subtitle": "Fresh food and friendly faces",
+    "paragraphs": [
+      "Every Sunday morning, Liam and his mother walk twenty minutes from their house to Riverside Market. The market takes place in a wide square next to the old stone bridge. Unlike big supermarkets, everything here is sold outdoors under colourful tents.",
+      "Liam's mother always brings two large cloth bags because she tries not to use plastic bags. First, they visit Mr Patel's vegetable stall to buy carrots, green beans and red onions. Mr Patel knows Liam well and often gives him a bright red apple for free.",
+      "Next, they stop at a cheese and honey stall. Liam likes tasting the sweet flower honey on small pieces of bread. His mother usually buys one jar of honey and a small piece of goat cheese for dinner.",
+      "Before walking home, they sit on a wooden bench near the river to drink fresh lemonade. Liam says Sunday morning is his favourite part of the week because the market is lively, friendly and full of delicious smells."
+    ]
+  },
+  "sec_a_part2": [
+    { "num": 11, "statement": "Liam and his mother drive to Riverside Market every Sunday.", "answer": "False" },
+    { "num": 12, "statement": "The market stalls are inside a modern shopping centre.", "answer": "False" },
+    { "num": 13, "statement": "Liam's mother avoids using plastic bags when she shops.", "answer": "True" },
+    { "num": 14, "statement": "Mr Patel sells fresh vegetables at the market.", "answer": "True" },
+    { "num": 15, "statement": "Liam has to pay extra money for his red apple from Mr Patel.", "answer": "False" },
+    { "num": 16, "statement": "They buy a jar of honey and some goat cheese.", "answer": "True" },
+    { "num": 17, "statement": "They drink hot tea on a bench before going home.", "answer": "False" },
+    { "num": 18, "statement": "Liam enjoys going to the market on Sunday mornings.", "answer": "True" }
+  ],
+  "sec_a_part3_responses": [
+    { "letter": "a", "text": "It's three pounds a kilo." },
+    { "letter": "b", "text": "No, thanks. I brought my own cloth bag." },
+    { "letter": "c", "text": "Yes, these sweet ones from Spain are very fresh." },
+    { "letter": "d", "text": "Only until two o'clock in the afternoon." },
+    { "letter": "e", "text": "Yes, there's a cash machine opposite the library." },
+    { "letter": "f", "text": "I'd like half a kilo of strawberries, please." }
+  ],
+  "sec_a_part3": [
+    { "num": 19, "question": "How much are the red grapes?", "answer": "a" },
+    { "num": 20, "question": "What can I get for you today?", "answer": "f" },
+    { "num": 21, "question": "Do you need a plastic bag for your shopping?", "answer": "b" },
+    { "num": 22, "question": "Are these oranges good for juice?", "answer": "c" },
+    { "num": 23, "question": "How long is the market open on Sundays?", "answer": "d" },
+    { "num": 24, "question": "Is there a bank near the square?", "answer": "e" }
+  ],
+  "sec_a_part4": [
+    { "num": 25, "pre": "She put the fresh ", "wrong_word": "vegetabels", "post": " into her shopping basket.", "answer": "vegetables" },
+    { "num": 26, "pre": "Keep the ", "wrong_word": "reciept", "post": " in case you want to exchange the shirt.", "answer": "receipt" },
+    { "num": 27, "pre": "We bought some yellow ", "wrong_word": "bannanas", "post": " for breakfast.", "answer": "bananas" },
+    { "num": 28, "pre": "The friendly ", "wrong_word": "custumer", "post": " thanked the baker.", "answer": "customer" },
+    { "num": 29, "pre": "There is a fish ", "wrong_word": "markit", "post": " near the harbour.", "answer": "market" },
+    { "num": 30, "pre": "I need a new ", "wrong_word": "wallit", "post": " to keep my cards and coins.", "answer": "wallet" }
+  ],
+  "sec_b_part1": [
+    { "num": 31, "sentence": "Liam ______ goes to the market on Sundays; he never misses a week.", "options": ["always", "never", "rarely"], "answer": "always" },
+    { "num": 32, "sentence": "We have got ______ fresh strawberries, so we can make a fruit salad.", "options": ["any", "some", "much"], "answer": "some" },
+    { "num": 33, "sentence": "How ______ honey is there in the glass jar?", "options": ["many", "much", "few"], "answer": "much" },
+    { "num": 34, "sentence": "______ your mother got a list of things to buy?", "options": ["Has", "Have", "Is"], "answer": "Has" },
+    { "num": 35, "sentence": "There are ______ colourful tents in the town square today.", "options": ["much", "a little", "a lot of"], "answer": "a lot of" },
+    { "num": 36, "sentence": "Is there a cheese stall here? Yes, ______.", "options": ["there is", "it is", "there are"], "answer": "there is" },
+    { "num": 37, "sentence": "My father ______ buys fast food because he prefers home-cooked meals.", "options": ["often", "usually", "seldom"], "answer": "seldom" },
+    { "num": 38, "sentence": "That green shopping bag isn't mine. It is ______.", "options": ["your", "yours", "you"], "answer": "yours" },
+    { "num": 39, "sentence": "We haven't got ______ carrots for the soup.", "options": ["any", "some", "a little"], "answer": "any" },
+    { "num": 40, "sentence": "How ______ pears would you like in your bag?", "options": ["much", "many", "little"], "answer": "many" }
+  ],
+  "sec_b_part2": [
+    {
+      "num": 41,
+      "blocks": ["the market", "often", "at", "Liam", "buys", "fresh fruit."],
+      "display_answer": "Liam often buys fresh fruit at the market.",
+      "accepted": ["liam often buys fresh fruit at the market"]
+    },
+    {
+      "num": 42,
+      "blocks": ["many", "How", "in the basket", "are", "onions", "there?"],
+      "display_answer": "How many onions are there in the basket?",
+      "accepted": ["how many onions are there in the basket"]
+    },
+    {
+      "num": 43,
+      "blocks": ["got", "haven't", "any", "plastic bags", "We", "today."],
+      "display_answer": "We haven't got any plastic bags today.",
+      "accepted": ["we haven't got any plastic bags today"]
+    },
+    {
+      "num": 44,
+      "blocks": ["near", "a", "Is", "fish stall", "there", "the bridge?"],
+      "display_answer": "Is there a fish stall near the bridge?",
+      "accepted": ["is there a fish stall near the bridge"]
+    },
+    {
+      "num": 45,
+      "blocks": ["are", "Whose", "cloth bags", "these", "?"],
+      "display_answer": "Whose cloth bags are these?",
+      "accepted": ["whose cloth bags are these"]
+    }
+  ],
+  "sec_b_part3": [
+    { "num": 46, "pre": "We always bring ", "post": " (we) cloth bags to the market.", "display_answer": "our", "accepted": ["our"] },
+    { "num": 47, "pre": "Mr Patel forgot his umbrella, so I lent him ", "post": " (I).", "display_answer": "mine", "accepted": ["mine"] },
+    { "num": 48, "pre": "", "post": " (be) there any good cheese stalls at this market?", "display_answer": "Are", "accepted": ["are"] },
+    { "num": 49, "pre": "Liam's mother ", "post": " (carry) the heavy vegetables in her backpack.", "display_answer": "carries", "accepted": ["carries"] },
+    { "num": 50, "pre": "There ", "post": " (not/be) much honey left in the kitchen.", "display_answer": "isn't", "accepted": ["isn't", "is not"] }
+  ]
+}

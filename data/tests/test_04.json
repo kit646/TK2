@@ -1,0 +1,132 @@
+{
+  "id": 4,
+  "slug": "test-04",
+  "category": "practice",
+  "badge": "Đề phát triển #1",
+  "title": "A2.1 – Progress Test 2 – Practice 1",
+  "subtitle": "Vocabulary & Grammar Assessment · A Morning at the Corner Bakery",
+  "topic": "Food, Café & Morning Routines",
+  "duration_minutes": 40,
+  "theme": {
+    "name": "indigo",
+    "dark": "#312e81",
+    "primary": "#4338ca",
+    "accent": "#4f46e5",
+    "bright": "#6366f1",
+    "soft": "#e0e7ff",
+    "pale": "#eef2ff",
+    "line": "#c7d2fe",
+    "ink": "#1e1b4b"
+  },
+  "word_bank": [
+    "bake", "serve", "boil", "wash", "pack", "mix",
+    "slice", "taste", "pay", "check", "deliver", "open"
+  ],
+  "sec_a_part1": [
+    { "num": 1, "pre": "We usually ", "post": " the café doors at seven o'clock every morning.", "answer": "open" },
+    { "num": 2, "pre": "Please ", "post": " the flour, eggs and milk together in a large bowl.", "answer": "mix" },
+    { "num": 3, "pre": "My aunt is going to ", "post": " twenty chocolate cakes for the school fair.", "answer": "bake" },
+    { "num": 4, "pre": "Waiters ", "post": " hot coffee and fresh pastries to the customers.", "answer": "serve" },
+    { "num": 5, "pre": "Could you ", "post": " this loaf of bread into thin pieces?", "answer": "slice" },
+    { "num": 6, "pre": "Remember to ", "post": " your hands before you touch any food.", "answer": "wash" },
+    { "num": 7, "pre": "We need to ", "post": " the sandwiches in paper bags for the picnic.", "answer": "pack" },
+    { "num": 8, "pre": "First, ", "post": " the water in a kettle to make green tea.", "answer": "boil" },
+    { "num": 9, "pre": "Customers can ", "post": " by cash or bank card at the counter.", "answer": "pay" },
+    { "num": 10, "pre": "Always ", "post": " the soup with a spoon before you add more salt.", "answer": "taste" }
+  ],
+  "passage": {
+    "title": "A MORNING AT THE CORNER BAKERY",
+    "subtitle": "Sofia's weekend job in Bristol",
+    "paragraphs": [
+      "Every Saturday and Sunday, eighteen-year-old Sofia wakes up at half past five to help at her aunt Clara's bakery in Bristol. The bakery is on a quiet street near the river, and local people love going there for warm bread and sweet pastries.",
+      "Sofia arrives at six o'clock, puts on her white apron, and helps arrange the croissants on wooden trays. Her aunt bakes three kinds of bread every morning: white bread, brown bread, and cheese bread. By seven o'clock, the sweet smell of coffee and butter fills the whole shop.",
+      "The busiest time is between eight and ten in the morning, when office workers and families stop by for breakfast. Sofia takes orders at the counter and packs cakes into small boxes. She says her favourite customers are the schoolchildren who come in with their parents for hot chocolate.",
+      "At two o'clock in the afternoon, the bakery closes. Before going home, Sofia cleans the tables and counts the remaining rolls. Clara always gives her a small bag of fresh biscuits as a thank-you gift."
+    ]
+  },
+  "sec_a_part2": [
+    { "num": 11, "statement": "Sofia works at her aunt's bakery on weekdays only.", "answer": "False" },
+    { "num": 12, "statement": "The bakery is located near a river in Bristol.", "answer": "True" },
+    { "num": 13, "statement": "Sofia arrives at the bakery at half past five.", "answer": "False" },
+    { "num": 14, "statement": "Aunt Clara bakes three different kinds of bread each morning.", "answer": "True" },
+    { "num": 15, "statement": "The shop is quietest between eight and ten o'clock.", "answer": "False" },
+    { "num": 16, "statement": "Sofia enjoys serving schoolchildren who buy hot chocolate.", "answer": "True" },
+    { "num": 17, "statement": "The bakery stays open until five o'clock in the evening.", "answer": "False" },
+    { "num": 18, "statement": "Sofia takes home some fresh biscuits after work.", "answer": "True" }
+  ],
+  "sec_a_part3_responses": [
+    { "letter": "a", "text": "About two pounds fifty for a large cup." },
+    { "letter": "b", "text": "Yes, we have apple pie and lemon cake." },
+    { "letter": "c", "text": "Black, with a little sugar, please." },
+    { "letter": "d", "text": "Of course. Would you like a paper bag?" },
+    { "letter": "e", "text": "She's very patient and always smiling." },
+    { "letter": "f", "text": "At six o'clock on weekdays." }
+  ],
+  "sec_a_part3": [
+    { "num": 19, "question": "How would you like your coffee?", "answer": "c" },
+    { "num": 20, "question": "Have you got any desserts today?", "answer": "b" },
+    { "num": 21, "question": "How much is a glass of orange juice?", "answer": "a" },
+    { "num": 22, "question": "What time does the bakery open?", "answer": "f" },
+    { "num": 23, "question": "Could I have two cheese croissants, please?", "answer": "d" },
+    { "num": 24, "question": "What is your aunt Clara like?", "answer": "e" }
+  ],
+  "sec_a_part4": [
+    { "num": 25, "pre": "I had two ", "wrong_word": "biscuts", "post": " with my afternoon tea.", "answer": "biscuits" },
+    { "num": 26, "pre": "We ordered a hot ", "wrong_word": "chocolat", "post": " and a muffin.", "answer": "chocolate" },
+    { "num": 27, "pre": "There is a small ", "wrong_word": "cupbord", "post": " next to the sink.", "answer": "cupboard" },
+    { "num": 28, "pre": "She always eats ", "wrong_word": "breakfirst", "post": " before eight o'clock.", "answer": "breakfast" },
+    { "num": 29, "pre": "Put the cold ", "wrong_word": "yoghurt", "post": " back in the fridge.", "answer": "yogurt" },
+    { "num": 30, "pre": "He bought a fresh ", "wrong_word": "strawbery", "post": " tart for his mother.", "answer": "strawberry" }
+  ],
+  "sec_b_part1": [
+    { "num": 31, "sentence": "Sofia ______ arrives late at the bakery; she is always on time.", "options": ["never", "always", "often"], "answer": "never" },
+    { "num": 32, "sentence": "______ Clara got a big oven in the kitchen?", "options": ["Have", "Has", "Does"], "answer": "Has" },
+    { "num": 33, "sentence": "We haven't got ______ sugar left for the cakes.", "options": ["many", "a few", "any"], "answer": "any" },
+    { "num": 34, "sentence": "How ______ eggs do we need to bake this sponge cake?", "options": ["much", "many", "a little"], "answer": "many" },
+    { "num": 35, "sentence": "There is only ______ butter on the plate.", "options": ["a little", "a few", "many"], "answer": "a little" },
+    { "num": 36, "sentence": "______ four small round tables near the window.", "options": ["There is", "There are", "Are there"], "answer": "There are" },
+    { "num": 37, "sentence": "My brother ______ drinks coffee in the evening because he can't sleep.", "options": ["rarely", "always", "usually"], "answer": "rarely" },
+    { "num": 38, "sentence": "______ apron is this on the chair? Is it yours?", "options": ["Who", "Whose", "Who's"], "answer": "Whose" },
+    { "num": 39, "sentence": "______ there a bakery near the train station?", "options": ["Is", "Are", "Has"], "answer": "Is" },
+    { "num": 40, "sentence": "Have the bakers got enough flour? Yes, they ______.", "options": ["do", "are", "have"], "answer": "have" }
+  ],
+  "sec_b_part2": [
+    {
+      "num": 41,
+      "blocks": ["at six", "Sofia", "always", "starts work", "in the morning."],
+      "display_answer": "Sofia always starts work at six in the morning.",
+      "accepted": ["sofia always starts work at six in the morning"]
+    },
+    {
+      "num": 42,
+      "blocks": ["coffee", "How", "do", "you", "much", "drink?"],
+      "display_answer": "How much coffee do you drink?",
+      "accepted": ["how much coffee do you drink"]
+    },
+    {
+      "num": 43,
+      "blocks": ["fresh", "There", "some", "on the table", "are", "croissants."],
+      "display_answer": "There are some fresh croissants on the table.",
+      "accepted": ["there are some fresh croissants on the table"]
+    },
+    {
+      "num": 44,
+      "blocks": ["got", "Has", "any", "brown bread", "the shop", "?"],
+      "display_answer": "Has the shop got any brown bread?",
+      "accepted": ["has the shop got any brown bread"]
+    },
+    {
+      "num": 45,
+      "blocks": ["white", "is", "That", "apron", "hers."],
+      "display_answer": "That white apron is hers.",
+      "accepted": ["that white apron is hers"]
+    }
+  ],
+  "sec_b_part3": [
+    { "num": 46, "pre": "My uncle owns a café, and ", "post": " (he) coffee is famous in town.", "display_answer": "his", "accepted": ["his"] },
+    { "num": 47, "pre": "These warm biscuits are for you, and those cakes are ", "post": " (we).", "display_answer": "ours", "accepted": ["ours"] },
+    { "num": 48, "pre": "", "post": " (be) there any orange juice in the fridge?", "display_answer": "Is", "accepted": ["is"] },
+    { "num": 49, "pre": "Clara ", "post": " (wash) all the baking trays every afternoon.", "display_answer": "washes", "accepted": ["washes"] },
+    { "num": 50, "pre": "There ", "post": " (not/be) any empty seats in the café right now.", "display_answer": "aren't", "accepted": ["aren't", "are not"] }
+  ]
+}

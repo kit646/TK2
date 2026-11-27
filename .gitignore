@@ -1,0 +1,5 @@
+/target/
+data/history.json
+*.log
+.DS_Store
+Thumbs.db

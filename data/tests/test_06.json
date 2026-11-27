@@ -1,0 +1,132 @@
+{
+  "id": 6,
+  "slug": "test-06",
+  "category": "practice",
+  "badge": "Đề phát triển #3",
+  "title": "A2.1 – Progress Test 2 – Practice 3",
+  "subtitle": "Vocabulary & Grammar Assessment · Sharing a Flat in Edinburgh",
+  "topic": "Home, Rooms & Furniture",
+  "duration_minutes": 40,
+  "theme": {
+    "name": "teal",
+    "dark": "#134e4a",
+    "primary": "#0f766e",
+    "accent": "#0d9488",
+    "bright": "#14b8a6",
+    "soft": "#ccfbf1",
+    "pale": "#f0fdfa",
+    "line": "#99f6e4",
+    "ink": "#042f2e"
+  },
+  "word_bank": [
+    "share", "rent", "move", "decorate", "tidy", "hang",
+    "fix", "lock", "sweep", "water", "fold", "paint"
+  ],
+  "sec_a_part1": [
+    { "num": 1, "pre": "My sister and I ", "post": " a two-bedroom apartment near the university.", "answer": "share" },
+    { "num": 2, "pre": "Let's ", "post": " the living room walls light blue this weekend.", "answer": "paint" },
+    { "num": 3, "pre": "Please ", "post": " the front door whenever you leave the house.", "answer": "lock" },
+    { "num": 4, "pre": "I need to ", "post": " my desk before I start studying for the exam.", "answer": "tidy" },
+    { "num": 5, "pre": "We plan to ", "post": " our coats on the hooks behind the door.", "answer": "hang" },
+    { "num": 6, "pre": "How much does it cost to ", "post": " a small studio flat in this area?", "answer": "rent" },
+    { "num": 7, "pre": "Don't forget to ", "post": " the plants on the balcony twice a week.", "answer": "water" },
+    { "num": 8, "pre": "Could you ", "post": " the broken lamp in the hallway?", "answer": "fix" },
+    { "num": 9, "pre": "We always ", "post": " the kitchen floor after dinner.", "answer": "sweep" },
+    { "num": 10, "pre": "I usually ", "post": " my clean clothes and put them in the wardrobe.", "answer": "fold" }
+  ],
+  "passage": {
+    "title": "SHARING A FLAT IN EDINBURGH",
+    "subtitle": "Life with a flatmate",
+    "paragraphs": [
+      "Six months ago, Maya and her university friend Chloe decided to rent a bright second-floor flat in Edinburgh. Both girls wanted to live close to the city library, and their new street is only a ten-minute walk from campus.",
+      "The flat has two small bedrooms, a sunny kitchen, one bathroom, and a comfortable living room. In the living room, there is a soft grey sofa, a wooden coffee table, and a tall bookshelf next to the window. Maya brought three green plants from her parents' house to make the room look nicer.",
+      "Living together works well because they share the housework fairly. Maya loves cooking, so she usually prepares dinner on Mondays, Wednesdays and Fridays. Chloe prefers cleaning; she sweeps the floors and washes the dishes after meals. At weekends, they sometimes invite friends over for board games.",
+      "Sometimes the street outside is noisy on Saturday nights, but Maya and Chloe don't mind. They say their flat is warm, cosy and much cheaper than living alone."
+    ]
+  },
+  "sec_a_part2": [
+    { "num": 11, "statement": "Maya and Chloe moved into their Edinburgh flat six months ago.", "answer": "True" },
+    { "num": 12, "statement": "Their flat is on the ground floor of the building.", "answer": "False" },
+    { "num": 13, "statement": "They can walk to the university campus in ten minutes.", "answer": "True" },
+    { "num": 14, "statement": "The flat has got two bathrooms and one bedroom.", "answer": "False" },
+    { "num": 15, "statement": "Maya brought some plants from her parents' home.", "answer": "True" },
+    { "num": 16, "statement": "Chloe cooks dinner three evenings a week.", "answer": "False" },
+    { "num": 17, "statement": "They occasionally play board games with friends at weekends.", "answer": "True" },
+    { "num": 18, "statement": "Living together costs less money than living alone.", "answer": "True" }
+  ],
+  "sec_a_part3_responses": [
+    { "letter": "a", "text": "It's next to the kitchen, opposite the bathroom." },
+    { "letter": "b", "text": "Yes, there's a big one behind the sofa." },
+    { "letter": "c", "text": "Every Sunday morning before lunch." },
+    { "letter": "d", "text": "About seven hundred pounds a month." },
+    { "letter": "e", "text": "She's tidy, cheerful and very easy to live with." },
+    { "letter": "f", "text": "No, we haven't. We keep our bikes downstairs." }
+  ],
+  "sec_a_part3": [
+    { "num": 19, "question": "How much is the rent for your flat?", "answer": "d" },
+    { "num": 20, "question": "Where is your bedroom?", "answer": "a" },
+    { "num": 21, "question": "What is your flatmate Chloe like?", "answer": "e" },
+    { "num": 22, "question": "Have you got a balcony?", "answer": "f" },
+    { "num": 23, "question": "How often do you clean the bathroom?", "answer": "c" },
+    { "num": 24, "question": "Is there a bookshelf in the living room?", "answer": "b" }
+  ],
+  "sec_a_part4": [
+    { "num": 25, "pre": "My clothes are inside the wooden ", "wrong_word": "wardrob", "post": ".", "answer": "wardrobe" },
+    { "num": 26, "pre": "Put the clean plates in the ", "wrong_word": "kichen", "post": " please.", "answer": "kitchen" },
+    { "num": 27, "pre": "There are soft white ", "wrong_word": "curtins", "post": " on the bedroom window.", "answer": "curtains" },
+    { "num": 28, "pre": "We bought a warm wool ", "wrong_word": "carpit", "post": " for the floor.", "answer": "carpet" },
+    { "num": 29, "pre": "Please turn on the ", "wrong_word": "shawer", "post": " after your run.", "answer": "shower" },
+    { "num": 30, "pre": "I need a soft ", "wrong_word": "pilow", "post": " to sleep well at night.", "answer": "pillow" }
+  ],
+  "sec_b_part1": [
+    { "num": 31, "sentence": "Chloe ______ leaves dirty dishes in the sink; she washes them straight away.", "options": ["never", "always", "often"], "answer": "never" },
+    { "num": 32, "sentence": "______ Maya got a desk in her bedroom?", "options": ["Has", "Have", "Is"], "answer": "Has" },
+    { "num": 33, "sentence": "There aren't ______ posters on the bedroom walls.", "options": ["much", "any", "a little"], "answer": "any" },
+    { "num": 34, "sentence": "How ______ bedrooms are there in the apartment?", "options": ["much", "many", "little"], "answer": "many" },
+    { "num": 35, "sentence": "This warm grey blanket isn't Chloe's; it is ______.", "options": ["my", "mine", "me"], "answer": "mine" },
+    { "num": 36, "sentence": "______ a washing machine in the kitchen?", "options": ["Is there", "Are there", "There is"], "answer": "Is there" },
+    { "num": 37, "sentence": "We have got ______ nice lamps in the living room.", "options": ["a little", "a few", "much"], "answer": "a few" },
+    { "num": 38, "sentence": "Maya ______ cooks dinner on Mondays because she enjoys making pasta.", "options": ["usually", "never", "hardly"], "answer": "usually" },
+    { "num": 39, "sentence": "Have you and your flatmate got a television? No, we ______.", "options": ["aren't", "don't", "haven't"], "answer": "haven't" },
+    { "num": 40, "sentence": "How ______ space is there on the balcony?", "options": ["many", "much", "few"], "answer": "much" }
+  ],
+  "sec_b_part2": [
+    {
+      "num": 41,
+      "blocks": ["a tall", "is", "next to", "bookshelf", "the window.", "There"],
+      "display_answer": "There is a tall bookshelf next to the window.",
+      "accepted": ["there is a tall bookshelf next to the window"]
+    },
+    {
+      "num": 42,
+      "blocks": ["on Sundays.", "the flat", "usually", "Maya and Chloe", "clean"],
+      "display_answer": "Maya and Chloe usually clean the flat on Sundays.",
+      "accepted": ["maya and chloe usually clean the flat on sundays"]
+    },
+    {
+      "num": 43,
+      "blocks": ["a", "got", "Have", "dining table", "you", "?"],
+      "display_answer": "Have you got a dining table?",
+      "accepted": ["have you got a dining table"]
+    },
+    {
+      "num": 44,
+      "blocks": ["is", "This", "flat", "new", "theirs."],
+      "display_answer": "This new flat is theirs.",
+      "accepted": ["this new flat is theirs"]
+    },
+    {
+      "num": 45,
+      "blocks": ["there", "chairs", "in the kitchen?", "many", "How", "are"],
+      "display_answer": "How many chairs are there in the kitchen?",
+      "accepted": ["how many chairs are there in the kitchen"]
+    }
+  ],
+  "sec_b_part3": [
+    { "num": 46, "pre": "Maya and Chloe really love ", "post": " (they) sunny apartment.", "display_answer": "their", "accepted": ["their"] },
+    { "num": 47, "pre": "My room is blue, and ", "post": " (she) is light green.", "display_answer": "hers", "accepted": ["hers"] },
+    { "num": 48, "pre": "", "post": " (be) there any clean towels in the bathroom?", "display_answer": "Are", "accepted": ["are"] },
+    { "num": 49, "pre": "Chloe often ", "post": " (study) at the wooden desk in her room.", "display_answer": "studies", "accepted": ["studies"] },
+    { "num": 50, "pre": "There ", "post": " (not/be) a lift in this old building.", "display_answer": "isn't", "accepted": ["isn't", "is not"] }
+  ]
+}

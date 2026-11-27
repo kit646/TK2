@@ -1,0 +1,132 @@
+{
+  "id": 8,
+  "slug": "test-08",
+  "category": "practice",
+  "badge": "Đề phát triển #5",
+  "title": "A2.1 – Progress Test 2 – Practice 5",
+  "subtitle": "Vocabulary & Grammar Assessment · Our Community Cooking Class",
+  "topic": "Cooking, Recipes & Social Life",
+  "duration_minutes": 40,
+  "theme": {
+    "name": "plum",
+    "dark": "#581c87",
+    "primary": "#7e22ce",
+    "accent": "#9333ea",
+    "bright": "#a855f7",
+    "soft": "#f3e8ff",
+    "pale": "#faf5ff",
+    "line": "#e9d5ff",
+    "ink": "#3b0764"
+  },
+  "word_bank": [
+    "chop", "fry", "stir", "peel", "pour", "bake",
+    "taste", "heat", "add", "serve", "wash", "join"
+  ],
+  "sec_a_part1": [
+    { "num": 1, "pre": "First, ", "post": " the potatoes with a small knife before boiling them.", "answer": "peel" },
+    { "num": 2, "pre": "Please ", "post": " the onions into very small pieces.", "answer": "chop" },
+    { "num": 3, "pre": "You should ", "post": " the tomato sauce slowly so it doesn't burn.", "answer": "stir" },
+    { "num": 4, "pre": "Carefully ", "post": " the hot milk into the coffee cup.", "answer": "pour" },
+    { "num": 5, "pre": "Would you like to ", "post": " our Tuesday evening cooking club?", "answer": "join" },
+    { "num": 6, "pre": "Next, ", "post": " a little olive oil in a large pan.", "answer": "heat" },
+    { "num": 7, "pre": "Let's ", "post": " two eggs and some mushrooms in butter.", "answer": "fry" },
+    { "num": 8, "pre": "You can ", "post": " a pinch of black pepper to the soup.", "answer": "add" },
+    { "num": 9, "pre": "Waiters usually ", "post": " rice dishes with fresh green herbs.", "answer": "serve" },
+    { "num": 10, "pre": "Remember to ", "post": " the lettuce leaves in cold water.", "answer": "wash" }
+  ],
+  "passage": {
+    "title": "OUR COMMUNITY COOKING CLASS",
+    "subtitle": "Learning new recipes together",
+    "paragraphs": [
+      "Every Tuesday evening, ten neighbours meet in the large kitchen of Oakwood Community Hall for a two-hour cooking class. Their teacher is Chef Marco, who worked in restaurants in Rome and Madrid for fifteen years before retiring.",
+      "Each week, the group learns how to make one simple, healthy dish from a different country. Last Tuesday, they cooked Spanish vegetable paella with saffron rice, peppers and peas. Next week, Marco wants to teach them how to make Japanese noodle soup.",
+      "Nobody needs to bring expensive knives or pans because the hall has got everything ready. Students only pay five pounds each week to cover the cost of fresh ingredients. Marco prints the recipe on a single sheet of paper so everyone can practise again at home.",
+      "At eight o'clock, after all the food is ready, everyone sits together around a long wooden table to eat dinner. Most members say the best part of the class isn't just learning to cook—it is chatting and laughing with their neighbours."
+    ]
+  },
+  "sec_a_part2": [
+    { "num": 11, "statement": "The cooking class takes place on Tuesday mornings.", "answer": "False" },
+    { "num": 12, "statement": "Chef Marco used to work in Spain and Italy.", "answer": "True" },
+    { "num": 13, "statement": "Last week, the class cooked a Japanese noodle dish.", "answer": "False" },
+    { "num": 14, "statement": "Students have to bring their own frying pans from home.", "answer": "False" },
+    { "num": 15, "statement": "The five-pound fee pays for the fresh ingredients.", "answer": "True" },
+    { "num": 16, "statement": "Marco gives each student a printed copy of the recipe.", "answer": "True" },
+    { "num": 17, "statement": "The students take all the food home without eating at the hall.", "answer": "False" },
+    { "num": 18, "statement": "People enjoy talking with their neighbours during dinner.", "answer": "True" }
+  ],
+  "sec_a_part3_responses": [
+    { "letter": "a", "text": "About twenty minutes on medium heat." },
+    { "letter": "b", "text": "Yes, a little salt and two cloves of garlic." },
+    { "letter": "c", "text": "Only five pounds per lesson." },
+    { "letter": "d", "text": "Yes, I've got an extra wooden spoon here." },
+    { "letter": "e", "text": "He's very funny and explains every step clearly." },
+    { "letter": "f", "text": "Next Tuesday, we're making vegetable curry." }
+  ],
+  "sec_a_part3": [
+    { "num": 19, "question": "How long do we need to cook the rice?", "answer": "a" },
+    { "num": 20, "question": "How much does the cooking class cost?", "answer": "c" },
+    { "num": 21, "question": "What is Chef Marco like?", "answer": "e" },
+    { "num": 22, "question": "Does this soup need any more spices?", "answer": "b" },
+    { "num": 23, "question": "What are we cooking next week?", "answer": "f" },
+    { "num": 24, "question": "Have you got another spoon I can use?", "answer": "d" }
+  ],
+  "sec_a_part4": [
+    { "num": 25, "pre": "We need two red ", "wrong_word": "pepers", "post": " for the salad.", "answer": "peppers" },
+    { "num": 26, "pre": "Put the soup into four deep ", "wrong_word": "bowels", "post": ".", "answer": "bowls" },
+    { "num": 27, "pre": "Marco wrote the ", "wrong_word": "recipy", "post": " on the whiteboard.", "answer": "recipe" },
+    { "num": 28, "pre": "She poured olive ", "wrong_word": "iol", "post": " over the grilled vegetables.", "answer": "oil" },
+    { "num": 29, "pre": "Be careful! That metal ", "wrong_word": "kettel", "post": " is very hot.", "answer": "kettle" },
+    { "num": 30, "pre": "We invited all our ", "wrong_word": "neighburs", "post": " to dinner.", "answer": "neighbours" }
+  ],
+  "sec_b_part1": [
+    { "num": 31, "sentence": "Our cooking group ______ meets on Tuesday evenings.", "options": ["always", "never", "rarely"], "answer": "always" },
+    { "num": 32, "sentence": "Have we got ______ garlic in the kitchen?", "options": ["many", "any", "a few"], "answer": "any" },
+    { "num": 33, "sentence": "How ______ olive oil should I put in the pan?", "options": ["many", "much", "few"], "answer": "much" },
+    { "num": 34, "sentence": "______ Marco got his own recipe book?", "options": ["Has", "Have", "Is"], "answer": "Has" },
+    { "num": 35, "sentence": "There are ______ clean aprons on the table for the new students.", "options": ["a little", "some", "much"], "answer": "some" },
+    { "num": 36, "sentence": "My son ______ eats spicy food because he doesn't like chillies.", "options": ["rarely", "always", "usually"], "answer": "rarely" },
+    { "num": 37, "sentence": "______ a long wooden table in the dining hall.", "options": ["There is", "There are", "Are there"], "answer": "There is" },
+    { "num": 38, "sentence": "This recipe sheet isn't mine; I think it's ______.", "options": ["her", "hers", "she"], "answer": "hers" },
+    { "num": 39, "sentence": "How ______ tomatoes do we need for the pasta sauce?", "options": ["much", "many", "a little"], "answer": "many" },
+    { "num": 40, "sentence": "Have the students got sharp knives? Yes, they ______.", "options": ["have", "do", "are"], "answer": "have" }
+  ],
+  "sec_b_part2": [
+    {
+      "num": 41,
+      "blocks": ["at six", "usually", "starts", "The cooking class", "on Tuesdays."],
+      "display_answer": "The cooking class usually starts at six on Tuesdays.",
+      "accepted": ["the cooking class usually starts at six on tuesdays"]
+    },
+    {
+      "num": 42,
+      "blocks": ["salt", "much", "How", "in the soup?", "is", "there"],
+      "display_answer": "How much salt is there in the soup?",
+      "accepted": ["how much salt is there in the soup"]
+    },
+    {
+      "num": 43,
+      "blocks": ["any", "We", "mushrooms", "haven't got", "for the pizza."],
+      "display_answer": "We haven't got any mushrooms for the pizza.",
+      "accepted": ["we haven't got any mushrooms for the pizza"]
+    },
+    {
+      "num": 44,
+      "blocks": ["there", "ten", "Are", "students", "in the class?"],
+      "display_answer": "Are there ten students in the class?",
+      "accepted": ["are there ten students in the class"]
+    },
+    {
+      "num": 45,
+      "blocks": ["spoon", "Whose", "wooden", "this", "is?"],
+      "display_answer": "Whose wooden spoon is this?",
+      "accepted": ["whose wooden spoon is this"]
+    }
+  ],
+  "sec_b_part3": [
+    { "num": 46, "pre": "Chef Marco brings ", "post": " (he) favourite knife to class.", "display_answer": "his", "accepted": ["his"] },
+    { "num": 47, "pre": "We brought our bowls, and they brought ", "post": " (they).", "display_answer": "theirs", "accepted": ["theirs"] },
+    { "num": 48, "pre": "", "post": " (be) there any peas in the freezer?", "display_answer": "Are", "accepted": ["are"] },
+    { "num": 49, "pre": "Marco always ", "post": " (teach) us one helpful kitchen trick each week.", "display_answer": "teaches", "accepted": ["teaches"] },
+    { "num": 50, "pre": "There ", "post": " (not/be) any butter left in the fridge.", "display_answer": "isn't", "accepted": ["isn't", "is not"] }
+  ]
+}

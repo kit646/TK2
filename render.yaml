@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: a2-progress-test-portal
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/tests
+    envVars:
+      - key: PORT
+        value: "3000"

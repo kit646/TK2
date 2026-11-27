@@ -1,0 +1,131 @@
+{
+  "id": 3,
+  "slug": "test-03",
+  "category": "reference",
+  "badge": "Đề gốc #3",
+  "title": "A2.1 – Progress Test 2 – Test 3",
+  "subtitle": "Vocabulary & Grammar Assessment · Hobbies & Free Time",
+  "topic": "Hobbies & Photography Club",
+  "duration_minutes": 40,
+  "theme": {
+    "name": "emerald",
+    "dark": "#064e3b",
+    "primary": "#047857",
+    "accent": "#059669",
+    "bright": "#10b981",
+    "soft": "#ecfdf5",
+    "pale": "#f0fdf4",
+    "line": "#a7f3d0",
+    "ink": "#022c22"
+  },
+  "word_bank": [
+    "download", "carry", "book", "clean", "grow", "spend",
+    "send", "collect", "turn", "wait", "discover", "invite"
+  ],
+  "sec_a_part1": [
+    { "num": 1, "pre": "I usually ", "post": " my emails in the morning.", "answer": "send" },
+    { "num": 2, "pre": "We need to ", "post": " a table at the restaurant before Friday.", "answer": "book" },
+    { "num": 3, "pre": "My father likes to ", "post": " old coins.", "answer": "collect" },
+    { "num": 4, "pre": "Can you help me ", "post": " these heavy bags?", "answer": "carry" },
+    { "num": 5, "pre": "Please ", "post": " off the television before you leave.", "answer": "turn" },
+    { "num": 6, "pre": "My grandmother likes to ", "post": " flowers in her garden.", "answer": "grow" },
+    { "num": 7, "pre": "I want to ", "post": " a new game on my laptop.", "answer": "download" },
+    { "num": 8, "pre": "How much time do you ", "post": " watching videos every day?", "answer": "spend" },
+    { "num": 9, "pre": "We often ", "post": " for the bus near the supermarket.", "answer": "wait" },
+    { "num": 10, "pre": "You should ", "post": " your bedroom every weekend.", "answer": "clean" }
+  ],
+  "passage": {
+    "title": "A NEW HOBBY",
+    "subtitle": "Daniel's photography club",
+    "paragraphs": [
+      "My name is Daniel, and I am sixteen years old. Last year, I moved to a new town with my family because my father got a new job. At first, I did not know many people, so I often stayed at home after school. One day, my classmate Ben invited me to join his photography club. I was not very interested in photography before, but I decided to try it.",
+      "The club meets every Wednesday afternoon at the community centre. We usually take pictures of buildings, people and nature. Our teacher also shows us how to use photo-editing software.",
+      "I have learned a lot since I joined the club. Now, I have many new friends, and I enjoy spending my free time outdoors. Next month, we are going to have a small photo exhibition at school."
+    ]
+  },
+  "sec_a_part2": [
+    { "num": 11, "statement": "Daniel moved to a new town last year.", "answer": "True" },
+    { "num": 12, "statement": "Daniel already had many friends when he first arrived.", "answer": "False" },
+    { "num": 13, "statement": "Ben asked Daniel to join a photography club.", "answer": "True" },
+    { "num": 14, "statement": "The photography club meets every Friday.", "answer": "False" },
+    { "num": 15, "statement": "The students learn how to use photo-editing software.", "answer": "True" },
+    { "num": 16, "statement": "Daniel does not enjoy the photography club.", "answer": "False" },
+    { "num": 17, "statement": "The club members usually take pictures outdoors.", "answer": "True" },
+    { "num": 18, "statement": "The club will organise an exhibition next month.", "answer": "True" }
+  ],
+  "sec_a_part3_responses": [
+    { "letter": "a", "text": "It's opposite the post office." },
+    { "letter": "b", "text": "Yes, I have. I bought it yesterday." },
+    { "letter": "c", "text": "I usually have bread and eggs." },
+    { "letter": "d", "text": "No, there isn't." },
+    { "letter": "e", "text": "Twice a week." },
+    { "letter": "f", "text": "It's quite large, with a sofa and two armchairs." }
+  ],
+  "sec_a_part3": [
+    { "num": 19, "question": "What do you usually have for breakfast?", "answer": "c" },
+    { "num": 20, "question": "Where is the nearest bank?", "answer": "a" },
+    { "num": 21, "question": "Have you got a new laptop?", "answer": "b" },
+    { "num": 22, "question": "How often do you go shopping?", "answer": "e" },
+    { "num": 23, "question": "Is there a supermarket near here?", "answer": "d" },
+    { "num": 24, "question": "What is your living room like?", "answer": "f" }
+  ],
+  "sec_a_part4": [
+    { "num": 25, "pre": "I bought some ", "wrong_word": "tomatos", "post": " at the market.", "answer": "tomatoes" },
+    { "num": 26, "pre": "There is a big ", "wrong_word": "refridgerator", "post": " in our kitchen.", "answer": "refrigerator" },
+    { "num": 27, "pre": "My father works in a ", "wrong_word": "hospitel", "post": " near our house.", "answer": "hospital" },
+    { "num": 28, "pre": "I need to buy some new ", "wrong_word": "furnitures", "post": " for my bedroom.", "answer": "furniture" },
+    { "num": 29, "pre": "She uses her mobile phone to take ", "wrong_word": "photograps", "post": ".", "answer": "photographs" },
+    { "num": 30, "pre": "We usually have ", "wrong_word": "sandwitches", "post": " for lunch.", "answer": "sandwiches" }
+  ],
+  "sec_b_part1": [
+    { "num": 31, "sentence": "My brother __________ plays football after school. He loves the sport.", "options": ["never", "always", "rarely"], "answer": "always" },
+    { "num": 32, "sentence": "__________ your parents got a car?", "options": ["Has", "Have", "Are"], "answer": "Have" },
+    { "num": 33, "sentence": "There aren't __________ apples in the fridge.", "options": ["much", "any", "a little"], "answer": "any" },
+    { "num": 34, "sentence": "How __________ milk do you need for the cake?", "options": ["many", "much", "a few"], "answer": "much" },
+    { "num": 35, "sentence": "My sister __________ goes to bed late because she gets up early.", "options": ["usually", "never", "always"], "answer": "never" },
+    { "num": 36, "sentence": "__________ there any chairs in the kitchen?", "options": ["Are", "Is", "Have"], "answer": "Are" },
+    { "num": 37, "sentence": "This isn't our house. __________ is the white one next door.", "options": ["Our", "Ours", "We"], "answer": "Ours" },
+    { "num": 38, "sentence": "They __________ a beautiful garden behind their house.", "options": ["has got", "have got", "are got"], "answer": "have got" },
+    { "num": 39, "sentence": "There __________ two computers in my classroom.", "options": ["is", "are", "has"], "answer": "are" },
+    { "num": 40, "sentence": "We haven't got __________ bread, so we need to go shopping.", "options": ["many", "much", "a few"], "answer": "much" }
+  ],
+  "sec_b_part2": [
+    {
+      "num": 41,
+      "blocks": ["usually", "dinner", "at seven", "have", "We"],
+      "display_answer": "We usually have dinner at seven.",
+      "accepted": ["we usually have dinner at seven"]
+    },
+    {
+      "num": 42,
+      "blocks": ["got", "Has", "your sister", "a bicycle", "?"],
+      "display_answer": "Has your sister got a bicycle?",
+      "accepted": ["has your sister got a bicycle"]
+    },
+    {
+      "num": 43,
+      "blocks": ["there", "any", "Is", "juice", "in the fridge", "?"],
+      "display_answer": "Is there any juice in the fridge?",
+      "accepted": ["is there any juice in the fridge"]
+    },
+    {
+      "num": 44,
+      "blocks": ["often", "my friends", "I", "meet", "at weekends"],
+      "display_answer": "I often meet my friends at weekends.",
+      "accepted": ["i often meet my friends at weekends"]
+    },
+    {
+      "num": 45,
+      "blocks": ["is", "This", "not", "bag", "my", "."],
+      "display_answer": "This is not my bag.",
+      "accepted": ["this is not my bag"]
+    }
+  ],
+  "sec_b_part3": [
+    { "num": 46, "pre": "This is ", "post": " bedroom. (she)", "display_answer": "her", "accepted": ["her"] },
+    { "num": 47, "pre": "That red car is ", "post": ". (we)", "display_answer": "ours", "accepted": ["ours"] },
+    { "num": 48, "pre": "", "post": " there any eggs in the fridge? (be)", "display_answer": "Are", "accepted": ["are"] },
+    { "num": 49, "pre": "My father usually ", "post": " home at 6 p.m. (finish)", "display_answer": "finishes", "accepted": ["finishes"] },
+    { "num": 50, "pre": "There ", "post": " any sugar in the cupboard. (not / be)", "display_answer": "isn't", "accepted": ["isn't", "is not"] }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "id": 9,
+  "slug": "test-09",
+  "category": "practice",
+  "badge": "Đề phát triển #6",
+  "title": "A2.1 – Progress Test 2 – Practice 6",
+  "subtitle": "Vocabulary & Grammar Assessment · Working from a Coworking Space",
+  "topic": "Work, Office & Technology",
+  "duration_minutes": 40,
+  "theme": {
+    "name": "slate",
+    "dark": "#1e293b",
+    "primary": "#334155",
+    "accent": "#2563eb",
+    "bright": "#3b82f6",
+    "soft": "#e2e8f0",
+    "pale": "#f8fafc",
+    "line": "#cbd5e1",
+    "ink": "#0f172a"
+  },
+  "word_bank": [
+    "reply", "print", "type", "save", "attend", "charge",
+    "design", "connect", "explain", "sign", "delete", "upload"
+  ],
+  "sec_a_part1": [
+    { "num": 1, "pre": "Please ", "post": " your laptop battery before the afternoon meeting.", "answer": "charge" },
+    { "num": 2, "pre": "Did you ", "post": " to your manager's email this morning?", "answer": "reply" },
+    { "num": 3, "pre": "Remember to ", "post": " your document every ten minutes so you don't lose work.", "answer": "save" },
+    { "num": 4, "pre": "Can you ", "post": " two copies of the schedule for our team?", "answer": "print" },
+    { "num": 5, "pre": "I need to ", "post": " my computer to the office Wi-Fi network.", "answer": "connect" },
+    { "num": 6, "pre": "Hannah is going to ", "post": " a new logo for a local bookshop.", "answer": "design" },
+    { "num": 7, "pre": "Please ", "post": " your name at the bottom of the form.", "answer": "sign" },
+    { "num": 8, "pre": "Wait a moment while I ", "post": " the final photos to our website.", "answer": "upload" },
+    { "num": 9, "pre": "Could you ", "post": " how this new software works?", "answer": "explain" },
+    { "num": 10, "pre": "All staff have to ", "post": " the Monday morning briefing.", "answer": "attend" }
+  ],
+  "passage": {
+    "title": "WORKING FROM A COWORKING SPACE",
+    "subtitle": "Hannah's creative office in Leeds",
+    "paragraphs": [
+      "Hannah is a twenty-six-year-old graphic designer. She works for herself, so for two years she worked alone at her kitchen table. However, she started feeling lonely and found it hard to stop working in the evening.",
+      "In January, Hannah joined a shared office building called BrightDesk in the centre of Leeds. She pays a monthly fee for a desk near a big window, fast internet, and unlimited tea and coffee. There are also three quiet meeting rooms where she can talk to clients on video calls.",
+      "About forty people work at BrightDesk, including software engineers, writers and photographers. Hannah likes having colleagues around her again. During lunch breaks, she often sits in the sunny courtyard with two web developers and shares ideas about new projects.",
+      "Now, Hannah finishes work at half past five and leaves her laptop in a locker at the office. She says going home without work has made her evenings much happier and more relaxing."
+    ]
+  },
+  "sec_a_part2": [
+    { "num": 11, "statement": "Hannah worked at her kitchen table for two years.", "answer": "True" },
+    { "num": 12, "statement": "She enjoyed feeling lonely when she worked at home.", "answer": "False" },
+    { "num": 13, "statement": "BrightDesk is located in the centre of Leeds.", "answer": "True" },
+    { "num": 14, "statement": "Hannah has to pay extra money for every cup of tea at BrightDesk.", "answer": "False" },
+    { "num": 15, "statement": "There are three quiet rooms for video calls and meetings.", "answer": "True" },
+    { "num": 16, "statement": "Everyone at BrightDesk works as a graphic designer.", "answer": "False" },
+    { "num": 17, "statement": "Hannah often eats lunch in the courtyard with web developers.", "answer": "True" },
+    { "num": 18, "statement": "She takes her laptop home with her every evening.", "answer": "False" }
+  ],
+  "sec_a_part3_responses": [
+    { "letter": "a", "text": "Yes, there's one on the second floor next to the kitchen." },
+    { "letter": "b", "text": "I'm a graphic designer for small businesses." },
+    { "letter": "c", "text": "Sure, the password is on the card on your desk." },
+    { "letter": "d", "text": "Usually at half past five." },
+    { "letter": "e", "text": "About forty people from different companies." },
+    { "letter": "f", "text": "Yes, I have. I bought a bigger screen last month." }
+  ],
+  "sec_a_part3": [
+    { "num": 19, "question": "What do you do for a living?", "answer": "b" },
+    { "num": 20, "question": "Is there a colour printer in this building?", "answer": "a" },
+    { "num": 21, "question": "Could you tell me the Wi-Fi password?", "answer": "c" },
+    { "num": 22, "question": "How many people work in this shared office?", "answer": "e" },
+    { "num": 23, "question": "Have you got a new monitor for your desk?", "answer": "f" },
+    { "num": 24, "question": "What time do you usually finish work?", "answer": "d" }
+  ],
+  "sec_a_part4": [
+    { "num": 25, "pre": "My ", "wrong_word": "keybord", "post": " has got a broken letter key.", "answer": "keyboard" },
+    { "num": 26, "pre": "We have a video ", "wrong_word": "meating", "post": " at ten o'clock.", "answer": "meeting" },
+    { "num": 27, "pre": "She works as an office ", "wrong_word": "maneger", "post": " in London.", "answer": "manager" },
+    { "num": 28, "pre": "Please send me that ", "wrong_word": "documant", "post": " before Friday.", "answer": "document" },
+    { "num": 29, "pre": "He put his ", "wrong_word": "calender", "post": " next to the phone.", "answer": "calendar" },
+    { "num": 30, "pre": "Write down the client's ", "wrong_word": "adress", "post": " in your notebook.", "answer": "address" }
+  ],
+  "sec_b_part1": [
+    { "num": 31, "sentence": "Hannah ______ leaves her laptop in her office locker at 5:30.", "options": ["usually", "never", "rarely"], "answer": "usually" },
+    { "num": 32, "sentence": "______ the coworking space got free lockers for members?", "options": ["Has", "Have", "Is"], "answer": "Has" },
+    { "num": 33, "sentence": "There isn't ______ paper left in the printer tray.", "options": ["many", "any", "a few"], "answer": "any" },
+    { "num": 34, "sentence": "How ______ desks are there near the big window?", "options": ["much", "many", "little"], "answer": "many" },
+    { "num": 35, "sentence": "This silver charger isn't mine; is it ______?", "options": ["your", "yours", "you"], "answer": "yours" },
+    { "num": 36, "sentence": "______ three quiet meeting rooms on the first floor.", "options": ["There is", "There are", "Is there"], "answer": "There are" },
+    { "num": 37, "sentence": "My colleague ______ checks work emails on Sundays because she rests.", "options": ["hardly ever", "always", "often"], "answer": "hardly ever" },
+    { "num": 38, "sentence": "How ______ coffee do the office workers drink every day?", "options": ["many", "much", "few"], "answer": "much" },
+    { "num": 39, "sentence": "We have got ______ new ideas for the website design.", "options": ["a little", "a few", "much"], "answer": "a few" },
+    { "num": 40, "sentence": "Has your office got a sunny courtyard? Yes, it ______.", "options": ["is", "does", "has"], "answer": "has" }
+  ],
+  "sec_b_part2": [
+    {
+      "num": 41,
+      "blocks": ["usually", "at", "drinks", "tea", "Hannah", "her desk."],
+      "display_answer": "Hannah usually drinks tea at her desk.",
+      "accepted": ["hannah usually drinks tea at her desk"]
+    },
+    {
+      "num": 42,
+      "blocks": ["a", "meeting room", "there", "on this floor?", "Is"],
+      "display_answer": "Is there a meeting room on this floor?",
+      "accepted": ["is there a meeting room on this floor"]
+    },
+    {
+      "num": 43,
+      "blocks": ["emails", "many", "How", "do", "you", "receive", "daily?"],
+      "display_answer": "How many emails do you receive daily?",
+      "accepted": ["how many emails do you receive daily"]
+    },
+    {
+      "num": 44,
+      "blocks": ["got", "fast", "BrightDesk", "has", "internet."],
+      "display_answer": "BrightDesk has got fast internet.",
+      "accepted": ["brightdesk has got fast internet"]
+    },
+    {
+      "num": 45,
+      "blocks": ["notebook", "is", "blue", "That", "ours."],
+      "display_answer": "That blue notebook is ours.",
+      "accepted": ["that blue notebook is ours"]
+    }
+  ],
+  "sec_b_part3": [
+    { "num": 46, "pre": "I share ideas with ", "post": " (I) colleagues at lunchtime.", "display_answer": "my", "accepted": ["my"] },
+    { "num": 47, "pre": "This desk is Hannah's, and the one by the door is ", "post": " (he).", "display_answer": "his", "accepted": ["his"] },
+    { "num": 48, "pre": "", "post": " (be) there any good cafés near your office?", "display_answer": "Are", "accepted": ["are"] },
+    { "num": 49, "pre": "My manager always ", "post": " (reply) to urgent messages quickly.", "display_answer": "replies", "accepted": ["replies"] },
+    { "num": 50, "pre": "There ", "post": " (not/be) any noise in the quiet study room.", "display_answer": "isn't", "accepted": ["isn't", "is not"] }
+  ]
+}

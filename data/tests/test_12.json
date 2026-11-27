@@ -1,0 +1,132 @@
+{
+  "id": 12,
+  "slug": "test-12",
+  "category": "practice",
+  "badge": "Đề phát triển #9",
+  "title": "A2.1 – Progress Test 2 – Practice 9",
+  "subtitle": "Vocabulary & Grammar Assessment · A Quiet Weekend by the Sea",
+  "topic": "Holidays, Travel & Accommodation",
+  "duration_minutes": 40,
+  "theme": {
+    "name": "sapphire",
+    "dark": "#172554",
+    "primary": "#1e40af",
+    "accent": "#1d4ed8",
+    "bright": "#3b82f6",
+    "soft": "#dbeafe",
+    "pale": "#eff6ff",
+    "line": "#bfdbfe",
+    "ink": "#0f172a"
+  },
+  "word_bank": [
+    "book", "pack", "stay", "swim", "explore", "relax",
+    "rent", "sunbathe", "arrive", "send", "cancel", "miss"
+  ],
+  "sec_a_part1": [
+    { "num": 1, "pre": "Let's ", "post": " a sea-view room at the guesthouse for next weekend.", "answer": "book" },
+    { "num": 2, "pre": "Don't forget to ", "post": " your sunglasses and a light raincoat.", "answer": "pack" },
+    { "num": 3, "pre": "We decided to ", "post": " in a small family hotel near the beach.", "answer": "stay" },
+    { "num": 4, "pre": "My husband loves to ", "post": " in the sea early in the morning.", "answer": "swim" },
+    { "num": 5, "pre": "In the afternoon, we are going to ", "post": " the narrow streets of the old town.", "answer": "explore" },
+    { "num": 6, "pre": "After a busy month at work, I just want to ", "post": " on the balcony with a book.", "answer": "relax" },
+    { "num": 7, "pre": "You can ", "post": " a small sailboat by the harbour for two hours.", "answer": "rent" },
+    { "num": 8, "pre": "Tourists often ", "post": " on the warm sand when the sun comes out.", "answer": "sunbathe" },
+    { "num": 9, "pre": "I'll ", "post": " you a postcard from Brighton tomorrow morning.", "answer": "send" },
+    { "num": 10, "pre": "Our train will ", "post": " at Brighton station at half past ten.", "answer": "arrive" }
+  ],
+  "passage": {
+    "title": "A QUIET WEEKEND BY THE SEA",
+    "subtitle": "Nadia's short trip to Brighton",
+    "paragraphs": [
+      "Last Friday afternoon, Nadia and her husband Karim took a one-hour train from London to Brighton for a quiet weekend by the sea. They booked a cosy room on the top floor of a white guesthouse overlooking the water.",
+      "On Saturday morning, the sky was bright blue, though the sea wind was a little cool. After eating toast, eggs and fresh fruit at the guesthouse, they walked along the famous pier and took lots of photos of the colourful beach huts.",
+      "At lunchtime, they found a small seafood restaurant near the harbour and ate grilled fish with chips and lemon. In the afternoon, Karim wanted to visit the museum, while Nadia bought two handmade postcards and a wool scarf at a small craft shop.",
+      "Before taking the Sunday evening train back to London, they sat on the pebbles watching the orange sunset. Both of them agreed that two days by the sea felt just like a full week's holiday."
+    ]
+  },
+  "sec_a_part2": [
+    { "num": 11, "statement": "Nadia and Karim travelled to Brighton by train.", "answer": "True" },
+    { "num": 12, "statement": "Their room at the guesthouse was on the ground floor.", "answer": "False" },
+    { "num": 13, "statement": "The sea wind on Saturday morning was very hot.", "answer": "False" },
+    { "num": 14, "statement": "They had breakfast at the guesthouse before walking along the pier.", "answer": "True" },
+    { "num": 15, "statement": "They ate grilled fish and chips for lunch near the harbour.", "answer": "True" },
+    { "num": 16, "statement": "Nadia went to the museum with Karim in the afternoon.", "answer": "False" },
+    { "num": 17, "statement": "Nadia bought a scarf and two postcards at a craft shop.", "answer": "True" },
+    { "num": 18, "statement": "They returned to London on Monday morning.", "answer": "False" }
+  ],
+  "sec_a_part3_responses": [
+    { "letter": "a", "text": "Just two nights, from Friday to Sunday." },
+    { "letter": "b", "text": "Yes, breakfast is served from seven until ten." },
+    { "letter": "c", "text": "Only about five minutes on foot." },
+    { "letter": "d", "text": "It's clean, bright and has a lovely view of the sea." },
+    { "letter": "e", "text": "By train from Victoria Station." },
+    { "letter": "f", "text": "No, there isn't, but there is free street parking outside." }
+  ],
+  "sec_a_part3": [
+    { "num": 19, "question": "How long are you staying at the guesthouse?", "answer": "a" },
+    { "num": 20, "question": "Is breakfast included in the room price?", "answer": "b" },
+    { "num": 21, "question": "How far is the beach from here?", "answer": "c" },
+    { "num": 22, "question": "What is your hotel room like?", "answer": "d" },
+    { "num": 23, "question": "How did you travel to Brighton?", "answer": "e" },
+    { "num": 24, "question": "Is there a car park behind the hotel?", "answer": "f" }
+  ],
+  "sec_a_part4": [
+    { "num": 25, "pre": "We stayed at a comfortable ", "wrong_word": "guesthous", "post": " by the beach.", "answer": "guesthouse" },
+    { "num": 26, "pre": "Put your ", "wrong_word": "sutcase", "post": " next to the wardrobe.", "answer": "suitcase" },
+    { "num": 27, "pre": "Don't forget your ", "wrong_word": "sunglases", "post": " when you go outside.", "answer": "sunglasses" },
+    { "num": 28, "pre": "There are many small boats in the ", "wrong_word": "harbur", "post": ".", "answer": "harbour" },
+    { "num": 29, "pre": "I bought a ", "wrong_word": "postcart", "post": " for my best friend.", "answer": "postcard" },
+    { "num": 30, "pre": "We sat on the ", "wrong_word": "beech", "post": " and watched the waves.", "answer": "beach" }
+  ],
+  "sec_b_part1": [
+    { "num": 31, "sentence": "Nadia ______ takes her camera when she travels to the seaside.", "options": ["always", "never", "rarely"], "answer": "always" },
+    { "num": 32, "sentence": "______ the guesthouse got free Wi-Fi in all the bedrooms?", "options": ["Has", "Have", "Is"], "answer": "Has" },
+    { "num": 33, "sentence": "There aren't ______ big clouds in the sky today.", "options": ["much", "any", "a little"], "answer": "any" },
+    { "num": 34, "sentence": "How ______ luggage have you got for the two-day trip?", "options": ["many", "much", "few"], "answer": "much" },
+    { "num": 35, "sentence": "This blue beach towel isn't Karim's; it is ______.", "options": ["her", "hers", "she"], "answer": "hers" },
+    { "num": 36, "sentence": "______ several small craft shops near the harbour.", "options": ["There is", "There are", "Is there"], "answer": "There are" },
+    { "num": 37, "sentence": "Karim ______ swims in winter because the sea water is freezing.", "options": ["never", "often", "usually"], "answer": "never" },
+    { "num": 38, "sentence": "How ______ postcards did Nadia buy in town?", "options": ["much", "many", "little"], "answer": "many" },
+    { "num": 39, "sentence": "We have got ______ hours left before our train leaves.", "options": ["a little", "a few", "much"], "answer": "a few" },
+    { "num": 40, "sentence": "______ a lift in the white guesthouse?", "options": ["Are there", "Is there", "Has there"], "answer": "Is there" }
+  ],
+  "sec_b_part2": [
+    {
+      "num": 41,
+      "blocks": ["by the sea", "always", "Nadia and Karim", "relax", "in summer."],
+      "display_answer": "Nadia and Karim always relax by the sea in summer.",
+      "accepted": ["nadia and karim always relax by the sea in summer"]
+    },
+    {
+      "num": 42,
+      "blocks": ["many", "How", "in the harbour?", "boats", "there", "are"],
+      "display_answer": "How many boats are there in the harbour?",
+      "accepted": ["how many boats are there in the harbour"]
+    },
+    {
+      "num": 43,
+      "blocks": ["a", "got", "Have", "sea-view", "you", "room?"],
+      "display_answer": "Have you got a sea-view room?",
+      "accepted": ["have you got a sea-view room"]
+    },
+    {
+      "num": 44,
+      "blocks": ["a", "near the pier.", "There", "seafood restaurant", "is"],
+      "display_answer": "There is a seafood restaurant near the pier.",
+      "accepted": ["there is a seafood restaurant near the pier"]
+    },
+    {
+      "num": 45,
+      "blocks": ["suitcase", "is", "Whose", "green", "that?"],
+      "display_answer": "Whose green suitcase is that?",
+      "accepted": ["whose green suitcase is that"]
+    }
+  ],
+  "sec_b_part3": [
+    { "num": 46, "pre": "We stayed in ", "post": " (we) favourite guesthouse near the sea.", "display_answer": "our", "accepted": ["our"] },
+    { "num": 47, "pre": "Nadia's ticket is in her bag, and Karim's is in ", "post": " (he).", "display_answer": "his", "accepted": ["his"] },
+    { "num": 48, "pre": "", "post": " (be) there any sandy beaches near Brighton?", "display_answer": "Are", "accepted": ["are"] },
+    { "num": 49, "pre": "The train ", "post": " (leave) Brighton station at six o'clock.", "display_answer": "leaves", "accepted": ["leaves"] },
+    { "num": 50, "pre": "There ", "post": " (not/be) any rain during their weekend trip.", "display_answer": "wasn't", "accepted": ["wasn't", "was not", "isn't", "is not"] }
+  ]
+}

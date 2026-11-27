@@ -1,0 +1,133 @@
+{
+  "id": 2,
+  "slug": "test-02",
+  "category": "reference",
+  "badge": "Đề gốc #2",
+  "title": "A2.1 – Sample Progress Test 2 – Test 2",
+  "subtitle": "Vocabulary & Grammar Assessment · Growing Your Own Food",
+  "topic": "Home Gardening & Food",
+  "duration_minutes": 40,
+  "theme": {
+    "name": "ocean",
+    "dark": "#1e3a8a",
+    "primary": "#1d4ed8",
+    "accent": "#2563eb",
+    "bright": "#0ea5e9",
+    "soft": "#e0f2fe",
+    "pale": "#f0f9ff",
+    "line": "#bae6fd",
+    "ink": "#0f172a"
+  },
+  "word_bank": [
+    "try", "stay", "like", "sells", "have", "find",
+    "help", "decide", "meet", "cost", "visit", "buy"
+  ],
+  "sec_a_part1": [
+    { "num": 1, "pre": "Why don’t we ", "post": " the new café near the station?", "answer": "try" },
+    { "num": 2, "pre": "When I go to Doha, I usually ", "post": " with my friend, Tarek.", "answer": "stay" },
+    { "num": 3, "pre": "I ", "post": " to go to the gym before I start work.", "answer": "like" },
+    { "num": 4, "pre": "The new supermarket ", "post": " Italian coffee. It’s delicious!", "answer": "sells" },
+    { "num": 5, "pre": "I usually ", "post": " a sandwich for lunch.", "answer": "have" },
+    { "num": 6, "pre": "I don’t like my job. I need to ", "post": " a new one.", "answer": "find" },
+    { "num": 7, "pre": "Can you ", "post": " me carry the shopping?", "answer": "help" },
+    { "num": 8, "pre": "I can’t ", "post": " which language to study – Spanish or Italian.", "answer": "decide" },
+    { "num": 9, "pre": "Why don’t we ", "post": " at the cinema at 7:15?", "answer": "meet" },
+    { "num": 10, "pre": "How much does a cup of tea ", "post": " in the new café?", "answer": "cost" }
+  ],
+  "passage": {
+    "title": "Are fresh fruit and vegetables too expensive?",
+    "subtitle": "Why not grow your own?",
+    "paragraphs": [
+      "We all know that it’s good for us to eat a lot of fresh fruit and vegetables. But it can be expensive, especially if you have a big family.",
+      "Why not grow your own? It’s cheap, it’s easy and it’s fun! You don’t even need much space. A box in the window is enough to grow some salad.",
+      "Bob Green has a vegetable garden at his house in Norwich. He says, “It can be hard work sometimes, but I love it. I grow a lot of different vegetables, for example, carrots, onions and beans. It saves me a lot of money, and the vegetables I grow are better than anything you can buy in the supermarkets.”",
+      "His garden has an apple tree and a pear tree. The apples aren’t very sweet, but he bakes them with brown sugar, and the family eat them for dessert with ice cream. Rob also grows strawberries, and he usually makes a few jars of jam each summer. “I’d like to make more,” he says. “The only problem is that, after the children see the strawberries, there aren’t many left!”",
+      "Rob often cooks with his children, and he says that it’s good for them to see where their food comes from too. “Children need to know that food doesn’t arrive at the supermarkets in packets!”"
+    ]
+  },
+  "sec_a_part2": [
+    { "num": 11, "statement": "It is expensive to grow your own vegetables.", "answer": "False" },
+    { "num": 12, "statement": "You don't need a lot of space to grow a few vegetables.", "answer": "True" },
+    { "num": 13, "statement": "Rob Green doesn't like growing vegetables because it's hard work.", "answer": "False" },
+    { "num": 14, "statement": "He thinks his vegetables are better than the vegetables in the supermarkets.", "answer": "True" },
+    { "num": 15, "statement": "He gets apples and oranges from his trees.", "answer": "False" },
+    { "num": 16, "statement": "He cooks the apples he grows.", "answer": "True" },
+    { "num": 17, "statement": "His children eat a lot of the strawberries.", "answer": "True" },
+    { "num": 18, "statement": "His children think that vegetables always come from the supermarket.", "answer": "False" }
+  ],
+  "sec_a_part3_responses": [
+    { "letter": "a", "text": "Yes, she is. We both very tall." },
+    { "letter": "b", "text": "She likes rock, pop and jazz." },
+    { "letter": "c", "text": "She’s friendly and very popular." },
+    { "letter": "d", "text": "Yes, I’d love to." },
+    { "letter": "e", "text": "I like Italian food." },
+    { "letter": "f", "text": "I’d like a pizza, please." }
+  ],
+  "sec_a_part3": [
+    { "num": 19, "question": "Would you like to go for a coffee?", "answer": "d" },
+    { "num": 20, "question": "What type of food do you like?", "answer": "e" },
+    { "num": 21, "question": "What would you like?", "answer": "f" },
+    { "num": 22, "question": "What’s your sister like?", "answer": "c" },
+    { "num": 23, "question": "What kind of music does she like?", "answer": "b" },
+    { "num": 24, "question": "Is your sister like you?", "answer": "a" }
+  ],
+  "sec_a_part4": [
+    { "num": 25, "pre": "Can I have roast ", "wrong_word": "kitchen", "post": " and boiled tomatoes, please?", "answer": "chicken" },
+    { "num": 26, "pre": "Early in the morning, Nora goes to a meeting with her ", "wrong_word": "colleges", "post": ".", "answer": "colleagues" },
+    { "num": 27, "pre": "The company has cats that workers can play with on their ", "wrong_word": "breads", "post": ".", "answer": "breaks" },
+    { "num": 28, "pre": "Is there any milk in the ", "wrong_word": "bridge", "post": "?", "answer": "fridge" },
+    { "num": 29, "pre": "I love the ", "wrong_word": "aimchair", "post": " in the living room.", "answer": "armchair" },
+    { "num": 30, "pre": "Go ", "wrong_word": "straigh", "post": " on until you come to Park Road.", "answer": "straight" }
+  ],
+  "sec_b_part1": [
+    { "num": 31, "sentence": "We haven’t got ______ big onions.", "options": ["some", "a", "any"], "answer": "any" },
+    { "num": 32, "sentence": "How ______ milk do the children have with their cereal?", "options": ["much", "many", "few"], "answer": "much" },
+    { "num": 33, "sentence": "Have both of the children got a laptop? Yes, they ______.", "options": ["are", "can", "have"], "answer": "have" },
+    { "num": 34, "sentence": "There are only ______ tomatoes in the fridge.", "options": ["a few", "many", "a lot of"], "answer": "a few" },
+    { "num": 35, "sentence": "I often leave work at 5.30, but I ______ need to stay in the office until 7 pm.", "options": ["usually", "sometimes", "always"], "answer": "sometimes" },
+    { "num": 36, "sentence": "Why ______ there any milk in the fridge?", "options": ["isn’t", "aren’t", "hasn’t"], "answer": "isn’t" },
+    { "num": 37, "sentence": "Go straight along the street and ______ a supermarket on your left.", "options": ["there are", "there’s", "this is"], "answer": "there’s" },
+    { "num": 38, "sentence": "______ phone is this?", "options": ["Who's", "Whose", "Who"], "answer": "Whose" },
+    { "num": 39, "sentence": "______ Paul got a new camera?", "options": ["Does", "Has", "Is"], "answer": "Has" },
+    { "num": 40, "sentence": "There’s no milk again – you ______ remember to buy any!", "options": ["often", "never", "always"], "answer": "never" }
+  ],
+  "sec_b_part2": [
+    {
+      "num": 41,
+      "blocks": ["to school,", "by 7:30.", "I usually", "always there", "and I", "catch the bus", "am"],
+      "display_answer": "I usually catch the bus to school, and I am always there by 7:30.",
+      "accepted": ["i usually catch the bus to school and i am always there by 7:30"]
+    },
+    {
+      "num": 42,
+      "blocks": ["classical music", "to listen to", "in your town.", "There are", "good places", "some"],
+      "display_answer": "There are some good places to listen to classical music in your town.",
+      "accepted": ["there are some good places to listen to classical music in your town"]
+    },
+    {
+      "num": 43,
+      "blocks": ["interesting buildings.", "with", "In my city", "a beautiful square", "many", "there’s"],
+      "display_answer": "In my city there’s a beautiful square with many interesting buildings.",
+      "accepted": ["in my city there's a beautiful square with many interesting buildings"]
+    },
+    {
+      "num": 44,
+      "blocks": ["to make curry for dinner.", "an", "I need some", "because I want", "onion", "lamb and"],
+      "display_answer": "I need some lamb and an onion because I want to make curry for dinner.",
+      "accepted": ["i need some lamb and an onion because i want to make curry for dinner"]
+    },
+    {
+      "num": 45,
+      "blocks": ["but I sometimes", "eat breakfast at home,", "usually", "buy it at school.", "I"],
+      "display_answer": "I usually eat breakfast at home, but I sometimes buy it at school.",
+      "accepted": ["i usually eat breakfast at home but i sometimes buy it at school"]
+    }
+  ],
+  "sec_b_part3": [
+    { "num": 46, "pre": "My brother lives in London now – it’s ", "post": " (he) favourite city.", "display_answer": "his", "accepted": ["his"] },
+    { "num": 47, "pre": "My sister’s room is next to ", "post": " (me).", "display_answer": "mine", "accepted": ["mine"] },
+    { "num": 48, "pre": "", "post": " (be) there any interesting buildings in the city center?", "display_answer": "Are", "accepted": ["are"] },
+    { "num": 49, "pre": "My father always ", "post": " (go) to bed very early because he is usually tired by 10 o'clock.", "display_answer": "goes", "accepted": ["goes"] },
+    { "num": 50, "pre": "There ", "post": " (not/be) a metro station near my house.", "display_answer": "isn't", "accepted": ["isn't", "is not"] }
+  ]
+}

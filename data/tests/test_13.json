@@ -1,0 +1,132 @@
+{
+  "id": 13,
+  "slug": "test-13",
+  "category": "practice",
+  "badge": "Đề phát triển #10",
+  "title": "A2.1 – Progress Test 2 – Practice 10",
+  "subtitle": "Vocabulary & Grammar Assessment · The Neighbourhood Library",
+  "topic": "Education, Books & Community",
+  "duration_minutes": 40,
+  "theme": {
+    "name": "berry",
+    "dark": "#701a75",
+    "primary": "#9d174d",
+    "accent": "#be185d",
+    "bright": "#ec4899",
+    "soft": "#fce7f3",
+    "pale": "#fdf2f8",
+    "line": "#fbcfe8",
+    "ink": "#500724"
+  },
+  "word_bank": [
+    "borrow", "return", "read", "study", "organise", "search",
+    "whisper", "volunteer", "recommend", "join", "spell", "translate"
+  ],
+  "sec_a_part1": [
+    { "num": 1, "pre": "Students can ", "post": " up to six books at a time with a library card.", "answer": "borrow" },
+    { "num": 2, "pre": "Please ", "post": " your library books before the due date.", "answer": "return" },
+    { "num": 3, "pre": "Remember to ", "post": " quietly inside the main reading room.", "answer": "whisper" },
+    { "num": 4, "pre": "Can you ", "post": " a good mystery novel for my weekend trip?", "answer": "recommend" },
+    { "num": 5, "pre": "Many teenagers ", "post": " at the community library on Saturday mornings.", "answer": "volunteer" },
+    { "num": 6, "pre": "You can ", "post": " the online catalogue to see if the dictionary is available.", "answer": "search" },
+    { "num": 7, "pre": "I prefer to ", "post": " for my English exam at the quiet library desk.", "answer": "study" },
+    { "num": 8, "pre": "Every month, the staff ", "post": " a free storytelling hour for young children.", "answer": "organise" },
+    { "num": 9, "pre": "How can I ", "post": " the Saturday afternoon book club?", "answer": "join" },
+    { "num": 10, "pre": "My younger brother likes to ", "post": " comic books in the bright corner.", "answer": "read" }
+  ],
+  "passage": {
+    "title": "THE NEIGHBOURHOOD LIBRARY",
+    "subtitle": "More than just a quiet room of books",
+    "paragraphs": [
+      "Five years ago, Elmwood Library nearly closed because the town did not have enough money to keep it open. However, twenty local people decided to volunteer their time to save the building and turn it into a lively community hub.",
+      "Today, the library is open six days a week from Tuesday to Sunday. Visitors can still borrow novels, history books, travel guides and magazines for free. There are also six public computers with free internet access for anyone who needs to write a CV or do homework.",
+      "Besides books, the library hosts a busy calendar of weekly events. On Wednesday afternoons, retired teachers help primary school pupils with their reading. On Friday mornings, older neighbours meet in the café corner for free tea and a friendly chess game.",
+      "Mrs Evans, who has managed the volunteers since 2021, says the library brings young and old people together. She is proud that more than four hundred families now hold active library cards."
+    ]
+  },
+  "sec_a_part2": [
+    { "num": 11, "statement": "Elmwood Library nearly closed five years ago due to a lack of money.", "answer": "True" },
+    { "num": 12, "statement": "Local volunteers helped keep the library open.", "answer": "True" },
+    { "num": 13, "statement": "The library is open every day of the week, including Mondays.", "answer": "False" },
+    { "num": 14, "statement": "Visitors must pay five pounds to borrow travel guides.", "answer": "False" },
+    { "num": 15, "statement": "There are six public computers with free internet in the library.", "answer": "True" },
+    { "num": 16, "statement": "Retired teachers help young pupils with mathematics on Wednesdays.", "answer": "False" },
+    { "num": 17, "statement": "Older people play chess in the café corner on Friday mornings.", "answer": "True" },
+    { "num": 18, "statement": "Fewer than two hundred families have got library cards today.", "answer": "False" }
+  ],
+  "sec_a_part3_responses": [
+    { "letter": "a", "text": "You can keep them for three weeks." },
+    { "letter": "b", "text": "Yes, on the second floor next to the study desks." },
+    { "letter": "c", "text": "It's completely free for local residents." },
+    { "letter": "d", "text": "Just bring your photo ID and fill in a short form." },
+    { "letter": "e", "text": "From nine in the morning until six in the evening." },
+    { "letter": "f", "text": "Over in the blue section near the entrance." }
+  ],
+  "sec_a_part3": [
+    { "num": 19, "question": "How do I get a new library card?", "answer": "d" },
+    { "num": 20, "question": "How long can I keep these borrowed books?", "answer": "a" },
+    { "num": 21, "question": "Where are the English dictionaries?", "answer": "f" },
+    { "num": 22, "question": "How much does it cost to join the book club?", "answer": "c" },
+    { "num": 23, "question": "Are there any public computers I can use?", "answer": "b" },
+    { "num": 24, "question": "What are the opening hours on Saturdays?", "answer": "e" }
+  ],
+  "sec_a_part4": [
+    { "num": 25, "pre": "We looked up the word in a large ", "wrong_word": "dictionery", "post": ".", "answer": "dictionary" },
+    { "num": 26, "pre": "She reads a science ", "wrong_word": "magasine", "post": " every month.", "answer": "magazine" },
+    { "num": 27, "pre": "Please bring your ", "wrong_word": "libary", "post": " card to the desk.", "answer": "library" },
+    { "num": 28, "pre": "My sister is a ", "wrong_word": "volunter", "post": " at the animal shelter.", "answer": "volunteer" },
+    { "num": 29, "pre": "Put the heavy books back on the top ", "wrong_word": "shelve", "post": ".", "answer": "shelf" },
+    { "num": 30, "pre": "He writes down new vocabulary in his ", "wrong_word": "notbook", "post": ".", "answer": "notebook" }
+  ],
+  "sec_b_part1": [
+    { "num": 31, "sentence": "Our library ______ opens on Monday because the volunteers rest that day.", "options": ["never", "always", "often"], "answer": "never" },
+    { "num": 32, "sentence": "______ your younger brother got a library card yet?", "options": ["Has", "Have", "Is"], "answer": "Has" },
+    { "num": 33, "sentence": "There aren't ______ free study desks left near the window.", "options": ["much", "any", "a little"], "answer": "any" },
+    { "num": 34, "sentence": "How ______ books can each student borrow at one time?", "options": ["much", "many", "little"], "answer": "many" },
+    { "num": 35, "sentence": "This red notebook isn't Mrs Evans's; it is ______.", "options": ["my", "mine", "me"], "answer": "mine" },
+    { "num": 36, "sentence": "______ six public computers in the quiet room.", "options": ["There is", "There are", "Is there"], "answer": "There are" },
+    { "num": 37, "sentence": "Older neighbours ______ meet at the café corner on Friday mornings.", "options": ["usually", "never", "seldom"], "answer": "usually" },
+    { "num": 38, "sentence": "How ______ time do we have before the library closes?", "options": ["many", "much", "few"], "answer": "much" },
+    { "num": 39, "sentence": "We have got ______ Spanish dictionaries on the bottom shelf.", "options": ["a little", "a few", "much"], "answer": "a few" },
+    { "num": 40, "sentence": "Have the children got enough storybooks to read? Yes, they ______.", "options": ["have", "do", "are"], "answer": "have" }
+  ],
+  "sec_b_part2": [
+    {
+      "num": 41,
+      "blocks": ["at the library", "always", "on Saturdays.", "study", "I"],
+      "display_answer": "I always study at the library on Saturdays.",
+      "accepted": ["i always study at the library on saturdays"]
+    },
+    {
+      "num": 42,
+      "blocks": ["got", "Have", "dictionary?", "an", "you", "English"],
+      "display_answer": "Have you got an English dictionary?",
+      "accepted": ["have you got an english dictionary"]
+    },
+    {
+      "num": 43,
+      "blocks": ["there", "any", "Are", "magazines", "on that table?"],
+      "display_answer": "Are there any magazines on that table?",
+      "accepted": ["are there any magazines on that table"]
+    },
+    {
+      "num": 44,
+      "blocks": ["much", "does", "How", "a library card", "cost?"],
+      "display_answer": "How much does a library card cost?",
+      "accepted": ["how much does a library card cost"]
+    },
+    {
+      "num": 45,
+      "blocks": ["are", "cards", "Those", "library", "ours."],
+      "display_answer": "Those library cards are ours.",
+      "accepted": ["those library cards are ours"]
+    }
+  ],
+  "sec_b_part3": [
+    { "num": 46, "pre": "Remember to bring ", "post": " (you) library card next Tuesday.", "display_answer": "your", "accepted": ["your"] },
+    { "num": 47, "pre": "My reading book is on the desk, and ", "post": " (she) is on the chair.", "display_answer": "hers", "accepted": ["hers"] },
+    { "num": 48, "pre": "", "post": " (be) there a quiet corner for young children?", "display_answer": "Is", "accepted": ["is"] },
+    { "num": 49, "pre": "Mrs Evans ", "post": " (organise) the volunteer schedule every week.", "display_answer": "organises", "accepted": ["organises", "organizes"] },
+    { "num": 50, "pre": "There ", "post": " (not/be) any noisy machines in the reading room.", "display_answer": "aren't", "accepted": ["aren't", "are not"] }
+  ]
+}

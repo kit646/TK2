@@ -1,0 +1,135 @@
+{
+  "id": 1,
+  "slug": "test-01",
+  "category": "reference",
+  "badge": "Đề gốc #1",
+  "title": "A2.1 – Progress Test 2 – Test 1",
+  "subtitle": "Vocabulary & Grammar Assessment · Moving to a New City",
+  "topic": "City Life & Daily Routines",
+  "duration_minutes": 40,
+  "theme": {
+    "name": "amber",
+    "dark": "#78350f",
+    "primary": "#b45309",
+    "accent": "#d97706",
+    "bright": "#f59e0b",
+    "soft": "#fef3c7",
+    "pale": "#fffbeb",
+    "line": "#fde68a",
+    "ink": "#451a03"
+  },
+  "word_bank": [
+    "spend", "order", "improve", "borrow", "invite", "repair",
+    "sell", "visit", "choose", "arrive", "prepare", "enjoy"
+  ],
+  "sec_a_part1": [
+    { "num": 1, "pre": "Why don't we ", "post": " a pizza for dinner tonight?", "answer": "order" },
+    { "num": 2, "pre": "I usually ", "post": " my grandparents at the weekend.", "answer": "visit" },
+    { "num": 3, "pre": "My brother wants to ", "post": " his English before he travels abroad.", "answer": "improve" },
+    { "num": 4, "pre": "Can I ", "post": " your laptop to finish my homework?", "answer": "borrow" },
+    { "num": 5, "pre": "The shop doesn't ", "post": " fresh vegetables on Sundays.", "answer": "sell" },
+    { "num": 6, "pre": "We need to ", "post": " some food before our guests arrive.", "answer": "prepare" },
+    { "num": 7, "pre": "What time do you usually ", "post": " at school?", "answer": "arrive" },
+    { "num": 8, "pre": "I don't know which dress to ", "post": " for the party.", "answer": "choose" },
+    { "num": 9, "pre": "How do you ", "post": " your free time?", "answer": "spend" },
+    { "num": 10, "pre": "Did you ", "post": " the football match yesterday?", "answer": "enjoy" }
+  ],
+  "passage": {
+    "title": "A NEW PLACE TO LIVE",
+    "subtitle": "A different way of life",
+    "paragraphs": [
+      "Moving to a new city can be difficult, especially when you do not know many people. However, it can also be an exciting experience. You can discover new places, try different food and make new friends.",
+      "Last year, Emma moved from a small village to Manchester because she found a new job there. At first, she didn't like living in a big city. The streets were busy, and there were too many cars. She also missed her old friends and her family's house.",
+      "After a few weeks, Emma started to enjoy her new life. She joined a sports club near her apartment and met some friendly people. She also found a small supermarket and a good Italian restaurant close to her home. At weekends, she often visits the city centre with her new friends. They sometimes go shopping or watch films at the cinema.",
+      "Emma says that she still loves her village, but she doesn't want to move back at the moment. She thinks that living in Manchester gives her more opportunities to learn new things and meet different people."
+    ]
+  },
+  "sec_a_part2": [
+    { "num": 11, "statement": "Emma moved to Manchester because she got a new job.", "answer": "True" },
+    { "num": 12, "statement": "Emma was happy about moving to the city from the beginning.", "answer": "False" },
+    { "num": 13, "statement": "She thought there were too many cars in Manchester.", "answer": "True" },
+    { "num": 14, "statement": "Emma joined a music club near her apartment.", "answer": "False" },
+    { "num": 15, "statement": "She made some new friends at the sports club.", "answer": "True" },
+    { "num": 16, "statement": "There is an Italian restaurant near her home.", "answer": "True" },
+    { "num": 17, "statement": "Emma usually visits the city centre alone.", "answer": "False" },
+    { "num": 18, "statement": "She wants to return to her village immediately.", "answer": "False" }
+  ],
+  "sec_a_part3_responses": [
+    { "letter": "a", "text": "It's quite large, with three bedrooms." },
+    { "letter": "b", "text": "Yes, there's one opposite the supermarket." },
+    { "letter": "c", "text": "I'd love to. Thank you for inviting me." },
+    { "letter": "d", "text": "He is tall and has short black hair." },
+    { "letter": "e", "text": "I'd like some chicken and rice, please." },
+    { "letter": "f", "text": "Twice a week, usually on Saturdays and Sundays." }
+  ],
+  "sec_a_part3": [
+    { "num": 19, "question": "Would you like to come to my birthday party?", "answer": "c" },
+    { "num": 20, "question": "What does your brother look like?", "answer": "d" },
+    { "num": 21, "question": "What would you like to eat?", "answer": "e" },
+    { "num": 22, "question": "How often do you go swimming?", "answer": "f" },
+    { "num": 23, "question": "Is there a pharmacy near here?", "answer": "b" },
+    { "num": 24, "question": "What is your new house like?", "answer": "a" }
+  ],
+  "sec_a_part4": [
+    { "num": 25, "pre": "I usually have a ", "wrong_word": "sandwhich", "post": " for lunch.", "answer": "sandwich" },
+    { "num": 26, "pre": "There is a big ", "wrong_word": "supermaket", "post": " near my house.", "answer": "supermarket" },
+    { "num": 27, "pre": "My mother bought a new ", "wrong_word": "refridgerator", "post": " yesterday.", "answer": "refrigerator" },
+    { "num": 28, "pre": "We need some ", "wrong_word": "potatos", "post": " to make dinner.", "answer": "potatoes" },
+    { "num": 29, "pre": "Turn left at the traffic ", "wrong_word": "lighs", "post": ".", "answer": "lights" },
+    { "num": 30, "pre": "There is a comfortable ", "wrong_word": "armchare", "post": " in the living room.", "answer": "armchair" }
+  ],
+  "sec_b_part1": [
+    { "num": 31, "sentence": "My sister ______ goes jogging in the morning because she enjoys it.", "options": ["always", "much", "any"], "answer": "always" },
+    { "num": 32, "sentence": "______ your parents got a new television?", "options": ["Have", "Are", "Do"], "answer": "Have" },
+    { "num": 33, "sentence": "How ______ oranges do we need to make juice?", "options": ["much", "many", "a little"], "answer": "many" },
+    { "num": 34, "sentence": "There isn't ______ butter in the fridge.", "options": ["many", "much", "a few"], "answer": "much" },
+    { "num": 35, "sentence": "My brother ______ plays video games because he prefers reading books.", "options": ["rarely", "many", "much"], "answer": "rarely" },
+    { "num": 36, "sentence": "______ a bus stop near your school?", "options": ["Are there", "Is there", "There are"], "answer": "Is there" },
+    { "num": 37, "sentence": "This isn't my computer. It is ______.", "options": ["her", "hers", "she"], "answer": "hers" },
+    { "num": 38, "sentence": "We ______ two bathrooms in our apartment.", "options": ["has got", "have got", "are"], "answer": "have got" },
+    { "num": 39, "sentence": "There ______ some beautiful parks in this city.", "options": ["is", "are", "has"], "answer": "are" },
+    { "num": 40, "sentence": "How ______ money have you got in your wallet?", "options": ["many", "much", "a few"], "answer": "much" }
+  ],
+  "sec_b_part2": [
+    {
+      "num": 41,
+      "blocks": ["usually", "my father", "drinks", "coffee", "after breakfast."],
+      "display_answer": "My father usually drinks coffee after breakfast.",
+      "accepted": ["my father usually drinks coffee after breakfast"]
+    },
+    {
+      "num": 42,
+      "blocks": ["got", "has", "my best friend", "a new smartphone."],
+      "display_answer": "My best friend has got a new smartphone.",
+      "accepted": ["my best friend has got a new smartphone"]
+    },
+    {
+      "num": 43,
+      "blocks": ["there", "in my neighbourhood", "are", "three restaurants."],
+      "display_answer": "There are three restaurants in my neighbourhood.",
+      "accepted": [
+        "there are three restaurants in my neighbourhood",
+        "in my neighbourhood there are three restaurants"
+      ]
+    },
+    {
+      "num": 44,
+      "blocks": ["much", "how", "rice", "do", "we", "need?"],
+      "display_answer": "How much rice do we need?",
+      "accepted": ["how much rice do we need"]
+    },
+    {
+      "num": 45,
+      "blocks": ["these", "are", "books", "ours."],
+      "display_answer": "These books are ours.",
+      "accepted": ["these books are ours"]
+    }
+  ],
+  "sec_b_part3": [
+    { "num": 46, "pre": "My sister lives in a small apartment. It is ", "post": " (she) new home.", "display_answer": "her", "accepted": ["her"] },
+    { "num": 47, "pre": "This blue bicycle is ", "post": " (I).", "display_answer": "mine", "accepted": ["mine"] },
+    { "num": 48, "pre": "", "post": " (be) there any supermarkets near your school?", "display_answer": "Are", "accepted": ["are"] },
+    { "num": 49, "pre": "My father usually ", "post": " (finish) work at six o'clock.", "display_answer": "finishes", "accepted": ["finishes"] },
+    { "num": 50, "pre": "There ", "post": " (not/be) any chairs in the kitchen.", "display_answer": "aren't", "accepted": ["aren't", "are not"] }
+  ]
+}
